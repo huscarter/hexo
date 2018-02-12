@@ -4,7 +4,7 @@ date: 2017-11-08 06:29:44
 categories: android
 tags:
      - git
-description: android项目git的常用命令，包括branch和tag操作。
+description: android项目git的常用命令，包括branch和tag操作
 ---
 
 ## branch操作
