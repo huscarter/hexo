@@ -8,6 +8,8 @@ tags:
 description: 我们做软件开发，为了方便使用和维护一些自己封装好的组建，把他们放到maven服务器是一个不错的选择。出于安全和版权等考虑，一般公司会搭建私有maven服务器，而nexus私服是一个很好的选择
 ---
 
+我们做软件开发，为了方便使用和维护一些自己封装好的组建，把他们放到maven服务器是一个不错的选择。出于安全和版权等考虑，一般公司会搭建私有maven服务器，而nexus私服是一个很好的选择
+
 ## 下载安装nexus
 
 - 因为nexus需要JRE环境，所以请先安装好JDK
@@ -26,18 +28,17 @@ description: 我们做软件开发，为了方便使用和维护一些自己封�
 
 ## 运行nexus
 
-- 进入nexus-x.x.x-xx/bin运行开启命令即可
+- 进入nexus-x.x.x-xx/bin运行命令即可
 ```
 nexus start
 ```
 
-- 在浏览器中访问localhost:8081，不抱错误即搭建nexus私服成功。登录的帐号默认是admin=admin123
+- 在浏览器中访问localhost:8081，不报错误即搭建nexus成功。（登录的帐号默认是admin=admin123）
 
-## android发布到私服
+## android发布到nexus私服
 
-[传送门](../android发布到nexus私服/)
-
+ [传送门](../android发布到nexus私服/)
 
 ## java发布到私服
 
-待定
+待更新
