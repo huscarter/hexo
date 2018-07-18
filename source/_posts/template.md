@@ -2,6 +2,7 @@
 title: template
 date: 2013-03-09 10:29:44
 categories: 
+            - 技术周边
 tags: 
 description: 博客模版
 ---
