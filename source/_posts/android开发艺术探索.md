@@ -150,4 +150,258 @@ RemoteViews只支持有限的View，不支持findViewById，使用一系列set�
 
 
 ## 六、Android的Drawable
+drawable表示的是一种可以在canvas上进行绘制的概念，可以是图片和颜色。
+
+1. BitmapDrawable
+    - android:antialias 抗锯齿
+    - android:dither 抖动效果
+    - android:tileMode 平铺模式
+
+2. ShapeDrawable
+
+3. LayerDrawable
+
+4. StateListDrawable 状态Drawable集合
+
+5. LevelListDrawable 等级Drawable集合
+
+6. TransitionDrawable 淡入淡出效果
+
+7. InsetDrawable 可以将其它Drawable嵌套在自己当中
+
+8. ScaleDrawable 可以根据自己等级将Drawable缩放到一定比例
+
+9. ClipDrawable 可以根据当前等级裁剪另一个Drawable
+
+10. 自定义Drawable很少用到，因为不能直接在XML中使用
+
+
+## 七、Android动画深入分析
+
+### View动画
+
+1. 平移(TranslateAnimation)
+2. 旋转(RotateAnimation)
+3. 缩放(ScaleAnimation)
+4. 透明(AlphaAnimation)
+
+### 帧动画
+
+播放一组预先定义好的图片
+
+### 属性动画 
+属性动画从android3.0（api 11）开始，老版本兼容可采用nineoldandroids库（其实内部是view动画实现）
+
+1. 常用的几个类为ObjectAnimation、ValueAnimation和AnimationSet
+
+2. 差值器（TimeInterpolator）和估值器（TypeEvaluator）
+    - 差值器根据时间流失的百分比来计算出当前属性值改变的百分比。
+    - 估值器根据属性改变的百分比计算改变后的属性值。
+    
+3. 属性动画的原理，该对象必须提供属性的get和set方法，动画在looper中执行通过反射调用属性的get和set方法设置属性值。
+
+4. 使用动画的注意事项
+
+    - 帧动画注意OOM
+    - 内存泄漏，一般是属性动画中的无限循环动画
+    - 兼容性问题，属性动画android 3.0（api 11）才支持的
+    - 不要使用px，尽量都使用dp
+    - 动画元素的交互，view动画的事件是保留在原来的位置，属性动画的事件位置则随view改变和改变
+    - 硬件加速推荐使用，android4.0（api 14）默认开启
+    
+## 八、理解Window和WindowManager
+在android中所有的视图都是通过Window来呈现的，包括Activity、Dialog和Toast。Window是一个抽象类，具体实现是PhoneWindow；
+WindowManager用于管理Window的创建和销毁。
+
+### Window和WindowManager
+1. WindowManager.LayoutParams 的flag属性
+    - FLAG_NOT_FOCUSABLE(window不需要获取焦点)
+    - FLAG_NOT_TOUCH_MODAL (window区域内的点击事件自己处理，区域外的交由底层window处理)
+    - FLAG_SHOW_WHEN_CLOCKED（window可以显示在锁屏上）
+    
+
+2. WindowManager.LayoutParams 的type属性
+    - 应用级window（1-99）
+    - 子window（1000-1999）
+    - 系统级window（2000-2999）定义系统级别的window需要申请user-permission
+    
+3. WindowManager操控Window是通过添加、删除和更新Window里的view是显现。
+
+### Window的内部机制
+每个Window对应一个View和ViewRootImpl，Window和View通过ViewRootImpl建立联系。ViewRootImpl由WindowManagerGlobal（WindowManager的实现类）
+创建。最后Window中View的添加、删除和更新通过ViewRootImpl调用WindowManagerService实现，这3个操作都是IPC过程。
+
+### Window的创建
+
+1. Activity的创建
+2. Dialog的创建
+3. Toast的创建
+
+## 九、四大组件的工作过程
+
+### 四大组件的运行状态
+
+1. Activity
+2. Service
+3. BroadcastReceiver
+4. ContentProvider
+
+### Activity的工作过程
+1. 通过Binder机制将创建Activity的消息通知给ActivityManagerService；
+2. 根据activity的启动模式判断是否应该创建并将Activity放于栈顶；
+3. 判断Activity是否已存在，如果存在置为resume状态，如果不存在重新开启创建；
+4. 判断Activity的进程是否创建，没有开始创建，已创建开启Activity；
+5. 调用Activity.attach初始化，回调onCreate方法，调用ActivityThread.handleResumeActivity将Activity设置为resume状态。
+
+### Service的工作过程
+1. Service启动
+![](service启动.jpg)
+
+2. Service绑定
+![](service绑定.jpg)
+
+### BroadcastReceiver的工作过程
+1. BroadcastReceiver注册
+2. BroadcastReceiver发送
+3. BroadcastReceiver接受
+
+### ContentProvider的工作过程
+ContentProvider的onCrate先于Application的onCreate执行。
+
+## 10、Android的消息机制
+
+### Android消息机制概述
+创建Handler需要使用到当前线程的Looper来构建内部消息循环系统，如果当前线程没有Looper则会报错。（可以调用Looper.prepare创建Looper）
+Handler创建完毕后，Looper和MessageQueue就可以和Handler系统工作了。通过Handler的post方法将一个Runnable投递到Handler内部的Looper中去处理或则
+通过Handler的send方法发送消息，post方法最终也是调用send方法。当Handler的send方法被调用时，它会调用MessageQueue的enqueueMessage方法将这个消息
+添加到消息队列中，然后Looper发现有新的消息到来时，就会处理这个消息，最终消息中的Runnable或者Handler的handleMessage方法会被调用。因为Looper所在
+的线程时Handler被创建的线程，这样一样业务逻辑就切换到创建Handler的线程中去执行了。
+
+### Android消息机制分析
+
+1. ThreadLocal的工作原理
+
+2. MessageQueue的工作原理
+
+3. Looper的工作原理
+
+4. Handler的工作原理
+
+### 主线程的消息循环
+
+## 11、Android的线程和线程池
+
+### 主线程和子线程
+android3.0（api 14）新特性
+1. 主线程中不能做网络请求
+2. 支持属性动画
+3. Fragment替代了ViewGroup
+
+### Android线程的形态
+1. AsyncTask
+2. HandlerThread
+3. IntentService
+
+### Android中的线程池
+1. FixedThreadPool 线程数量固定，空闲线程
+2. CacheThreadPool
+3. ScheduledThreadPool
+4. SingleThreadExecutor
+
+## 12、Bitmap的加载和Cache
+
+### Bitmap的高效加载
+1. android中通过BitmapFactory的四个方法加载图片：decodeFile、decodeSource、decodeStream、decodeByteArray。
+
+2. 通过BitmapFactory.options来加载所需的尺寸，通过inSampleSize采样实现。
+注意采样需要2次decode，而decodeStream采用 FileInputStream 时会出现问题，因为 FileInputStream采用有序的文件流，
+会导致第二次decode拿不到stream。解决办法是通过文件流获取文件描述，再通过BitmapFactory.decodeFileDescriptor加载缩放后的图片。
+
+### Android中的缓存策略
+
+1. LruCache(least recent use cache)
+LruCache是android3.1提供的缓存类，兼容早起版本可以使用support-v4包。它采用LinkedHashMap以强引用的方式存储外界的缓存对象，提供put和get方法来添加和删除缓存。
+当缓存满时LruCache会移除较早使用的缓存对象，然后添加新缓存。
+
+强引用 Object o = new Object()
+软引用 SoftReference<Object> sf = new SoftReference(); 内存不够被销毁
+弱引用 WeakReference<Object> wf = new WeakReference(); 内存够当触发GC时也会被销毁
+虚引用 PhantomReference<Object> pf = new PhantomReference();
+
+2. DiskCache 磁盘缓存
+
+### ImageLoader的使用
+
+## 13、综合技术
+
+### CrashHandler
+略
+
+### Multidex来解决方法数越界
+略
+
+### Android的动态加载技术
+1. 资源的访问
+通过调用AssetManager的addAssetPath发放，我们可以将一个apk中的资源加载到Resource对象中，由于addAssetPath隐藏在api中，所以我们只能通过反射。
+[addAssetPat(assetManager,dexPath)]
+2. activity 生命周期的管理
+通过提供生命周期接口，所有的插件Activity都实现此接口，通过代理的Activity调用插件Activity的生命周期方法。
+3. 插件ClassLoader管理
+为了防止多个ClassLoader加载同一个类造成类型转换错误，在代码中，通过将不通插件的ClassLoader村春在HashMap中，来保证不同插件中的类互不干扰。
+
+### 反编译
+略
+
+
+## 14、JNI和NDK编程
+
+### JNI的开发流程
+1. 在java中声明native方法
+2. 编译java原文件得到class文件，通过javah命令到处jni头文件
+3. 实现jni方法，可以通过C或者是C++
+4. 编译so库，可以通过gcc，然后运行使用
+
+### NDK的开发流程
+1. 下载和配置NDK
+2. 创建android项目，并声明所需的native方法
+3. 实现项目中的native方法（test.cpp,Android.mk,Application.mk）
+4. 通过ndk-build命令编译产生so文件
+
+### JNI的数据类型和类型签名
+略
+
+### JNI调用java方法
+先是通过类名找到类，再通过方法名找到方法id，最后就可以调用这个方法了。
+
+## 15、Android的性能优化
+
+### Android性能优化
+1. 布局优化
+    - include标签
+    - merge标签
+    - ViewStub 按需加载
+    - 线性布局由于相对布局
+2. 绘制优化
+    - onDraw方法不要创建新对象
+    - onDraw方法不要做耗时任务
+3. 内存泄漏优化
+    - 静态变量引用
+    - 单利模式
+    - android无限循环动画
+4. 响应速度优化和ANR分析
+    - Activity 5s
+    - BroadcastReceiver 10s
+    - service 20s
+5. ListView和Bitmap优化
+    - 避免在getView中做耗时操作
+    - 根据滑动状态来控制任务的执行频率
+    
+    - 使用inSampleSize缩放图片
+    - android3.0以后可以使用inBitmap复用图片内存
+    - 使用图片缓存
+6. 线程优化
+    - 线程池可以重用线程避免创建和销毁的开销
+    - 避免抢占CPU导致堵塞
+    
+
 
