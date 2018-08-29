@@ -50,8 +50,19 @@ git checkout v3.0.0
 ```
 
 #### 获取分支
+```
+git clone git://github.com/schacon/grit.git [mygrit]
+```
 
 #### 提交分支
+```
+git status // 查看代码的修改状态
+git add . // 暂存所有提交的文件
+git commit // 提交已暂存的文件
+git pull // 先同步代码到本地
+git push origin <本地分支名> // 再同步到服务器
+```
+
 
 ## tag操作
 
