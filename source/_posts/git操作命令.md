@@ -54,7 +54,7 @@ git checkout v3.0.0
 git clone git://github.com/schacon/grit.git [mygrit]
 ```
 
-#### 提交分支
+#### 提交代码到分支
 ```
 git status // 查看代码的修改状态
 git add . // 暂存所有提交的文件

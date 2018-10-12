@@ -1,5 +1,5 @@
 ---
-title: github搭建自己的博客
+title: android知识梳理
 date: 2018-08-06 20:29:44
 categories: android
 tags:
@@ -38,10 +38,18 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 ### android的图片处理
 
 ### android开发模式
+#### MVC
+#### MPV
+#### MVVM
 
 ### android的架构
 
-
+### 第三方框架
+#### fresco
+#### glide
+#### okhttp
+#### rxjava
+#### retrofit
 
 ## 网络通信相关
 

@@ -1,0 +1,279 @@
+---
+title: android项目开发规范
+date: 2016-07-12 06:56:04
+categories: android
+tags: 
+      - android
+description: 无规矩不成方圆
+---
+
+
+## 命名
+### 项目命名
+pascal，首字母一律大写。（如：TradingCoupon）
+不推荐后面加版本号1.1.x（如：Trading1.1.6），如果线上版本出现了升级，升级后的版本可能会与当前的版本冲突；但是可以加第几期（如：TradingCoupon2）。
+
+### 包命名
+一律小写，格式为“com.公司.项目名.模块名”。(如：com.jushi.trading.bean)
+
+### 变量命名
+1. 静态变量：一律大写，字母之间用“_”分开。（如：SHARE_NAME_KEY）
+2. 一般变量：字母之间用“_”分开。(如：user_name)
+
+### 方法命名
+驼峰法camel，第一个首字母小写，剩下的首字母一律大写。（如：getOrderDetail(String order_id)）
+
+### 文件命名
+1. java类命名（非接口）
+- pascal，首字母一律大写。如：UserAddress.java）
+- activity类，后面需要添加Activity。（如：UserAddressActivity.java）
+- adapter类，后面需要添加Adapter。（如：UserAddressAdapter.java）
+- fragment类，后面需要添加Fragment。（如：UserAddressFragment.java）
+- bean，后面不加Bean。（如：User .java）
+- Uitl类，需要添加Util。（如DateUtil.java）
+- 数据库操作文件，后面要加Dao。（如：UserDao. java）
+
+2. java类（接口）
+- 普通的借口类，命名为IXxx.java。（如IuserRequest.java）
+- Listener回调之类的用OnXxLisenter形式。（如 OnClickListener.java）
+- 其他的自定义，但是必须是pascal命名格式。
+
+3. 布局文件
+- Activity布局文件:一律按activity_xx.xml的形式。（如actvity_user_address.xml）
+- Adapter布局文件:一律按item_xx.xml的形式。 (如item_user_address.xml)
+- include 布局文件:一律以include_xx.xml的形式。（如：include_user_address.xml）
+
+4. 图片(一律按xx_xx_xx.png的形式)
+- 图标：icon_user_address.png
+- 按钮：
+    - btn_commt.png（正常状态）
+    - btn_commt_un.png（点击时的状态）
+- 背景：bg_login.png
+
+5. Drawable描述文件
+- 带有点击效果的selector
+    - selector_corner_orange.xml（圆角橙色）
+    - selector_rectangle_orange.xml（直角橙色）
+- 带有check属性值selector
+    - chck_corner_orange.xml（圆角橙色）
+    - chck_rectangle_orange.xml（直角橙色）
+- 圆角有填充色
+    - shape_corner_orange.xml
+- 圆角有填充色有边框
+    - shape_corner_border_orange.xml
+- 圆角只有边框图
+    - stroke_corner_orange.xml
+- 直角只有边框图
+    - stroke_rectangle_orange.xml
+
+
+### android控件id命名
+控件:缩写
+- RelativeLayout:rl_
+- LinearLayout:ll_
+- TextView:tv_
+- EditText:et_
+- ImageView:iv_
+- Buttom:btn_
+- CheckBox:cb_
+- RadioButton:rb_
+- RadioGroup:rg_
+- TimerPicker:tp_
+- ProgressBar:pb_
+- ScrollView:sv_
+- SimpleDraweeView:sdv_
+- include:i_
+- FrameLayout:fl_
+- TableLayout:tl_
+- GridLayout:gl_
+- Switch:s_
+
+
+## 代码
+### 类中的属性、方法和内部类声明需要区分放置
+1. 类的属性一律放到类的顶部。
+2. 类的方法声明放在属性部分下面。
+3. 内部类放在方法部分下面。
+	
+### 创建基类，复用基础类中的公共方法
+1. 创建BaseActivity基础类，定义通用的属性如Activity activity、Context context，CompositeSubscription subscription等；定义通用的方法抽象initView(){只做组件初始化},setListener(){只做事件添加},initData(){只做数据初始化}。
+2. 创建Base Bean基础类，实现Serializable，公用String status_code，String message等属性。
+3. 创建BaseFragment基础类，定义通用的属性如Activity activity、Context context，CompositeSubscription subscription等。定义通用的方法抽象initView(){组件初始化},setListener(){事件添加},initData(){数据初始化}。
+
+### 每个方法只做一件事，保持方法简洁明了
+不要将控件初始化和网络请求的代码写在同一个方法里。
+
+### 实体类规则
+1. 除了类似RecycleView.ViewHolder的实体类可以是public修饰和不加getter and setter，其余的实体类都必须按照JavaBean 规范编写（private 修饰，通过get和set方法访问）。
+2. 实体类统一放至bean包下，否则代码混淆后运行会报错。
+
+### 对于Activity之间传递数据推荐使用Bundle携带数据
+Bundle可以在多个Activity之间重用，不需要重新装载数据。
+
+### 展示实体类数据格式需要修改的，统一在实体类的get方法中做格式转换
+比如订单（order）总价（total_price）保留2位小数，getTotalPrice(){返回格式为小数点2位}，这样的做法是只改一处，作用于整个项目。
+
+### 网络请求Retrofit的Obsever必须基于同一个自定义的Obsever
+
+### 定义统一的加载组件
+
+### 定义统一的dialog组件
+
+### 定义统一的WebView组件以及WebViewJsBridge交互类
+
+### 所有组件显示的字符串都必须引用于string.xml
+
+### 不推荐使用lambda表达式
+因为现在的lambda不稳定，会造成项目崩溃。
+
+### 不要使用幽灵字符
+
+```
+if(notice_type==10011){  // 10011幽灵
+	// 
+} else if(notice_type==10013){ // 10013幽灵
+	// 
+}
+```
+
+## android资源文件定义
+### 统一按钮高度。
+```
+btn_height_max=56d
+btn_height_big=48dp
+btn_height_mid=32d
+btn_height_sma=24dp
+```
+
+### 定义title组件的高度
+```
+title_height=56dp
+```
+
+### 定义条目的高度
+每一个TextView,EditView等条目的高度。
+```
+item_height=48p
+```
+
+### 定义系统左右边距的宽度
+```
+app_pad=8dp
+```
+
+### 定义系统条目之间的间距
+```
+app_margin＝16p
+```
+
+### 定义字体大小,推荐使用dp
+```
+font_size_max_big=32dp
+font_size_max=24dp
+font_size_big=17dp
+font_size_mid=15dp
+font_size_sma=11dp
+font_size_sma_sma=9dp
+```
+
+### 定义drawable和内容的间距
+```
+drawable_pad=8dp
+```
+
+### 定义圆角弧度
+```
+radius＝5dp
+```
+
+### 统一item图片的高宽
+```
+img_width_big=100d
+img_width_mid=80dp
+img_width_sma=56dp
+
+img_height_big=100dp
+img_height_mid=80dp
+img_height_sma=56dp
+```
+
+### 定义EditView的padding
+```
+edit_pad=3dp
+```
+
+### 定义系统的基本色值
+```
+app_color=
+```
+
+### 定义字体颜色。
+```
+text_color_black
+text_color_gray
+text_color_orange
+text_color_red
+```
+
+### strings.xml 使用注释区分activity
+
+
+## 版本控制
+### 定义gradle.properties统一管理项目中的版本信息
+
+### 项目中创建版本说明文件CHANGELOG.md，纪录每一个版本的更新内容和时间
+
+### 版本服务器中创建branches和tags用来存放分支和历史版本
+
+
+## 注释
+### 每个类头部必须编写javadoc
+<pre>
+/**
+ * Create by weihuihui@meishubao.com on ${DATE}
+ * <p>
+ * 类说明:<br/>
+ * 接受传值:<br/>
+ * 对外传值:<br/>
+ * @since 
+ */
+</pre>
+
+### public 修饰的变量必须编写javadoc
+
+### 方法最好都写上注释
+<pre>
+@author 标明开发该类模块的作者 
+@version 标明该类模块的版本 
+@see 参考转向，也就是相关主题
+@param 对方法中某参数的说明
+@return 对方法返回值的说明
+@exception 对方法可能抛出的异常进行说明
+</pre>
+
+## 项目结构（以包为例）
+
+1. UI层
+- activity
+- adapter
+- view（自定义view）
+- fragment
+2. 业务逻辑层
+- 网络请求
+    - net
+- 数据库访问
+    - dao
+- utility
+    - DateFormat.java
+    - Bitmap.java
+    - Notification.java
+    - Shared Preference.java
+    - Environment.java
+    - CommonUtil.java
+3. data层
+- bean
+- provider
+4. service
+5. receiver
+6. widget
+
