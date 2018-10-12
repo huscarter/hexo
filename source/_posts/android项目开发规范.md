@@ -4,9 +4,8 @@ date: 2016-07-12 06:56:04
 categories: android
 tags: 
       - android
-description: 无规矩不成方圆
+description: 无规矩不成方圆。
 ---
-
 
 ## 命名
 ### 项目命名
@@ -88,7 +87,6 @@ pascal，首字母一律大写。（如：TradingCoupon）
 - GridLayout:gl_
 - Switch:s_
 
-
 ## 代码
 ### 类中的属性、方法和内部类声明需要区分放置
 1. 类的属性一律放到类的顶部。
@@ -137,7 +135,7 @@ if(notice_type==10011){  // 10011幽灵
 ```
 
 ## android资源文件定义
-### 统一按钮高度。
+### 统一按钮高度
 ```
 btn_height_max=56d
 btn_height_big=48dp
@@ -225,10 +223,9 @@ text_color_red
 
 ### 版本服务器中创建branches和tags用来存放分支和历史版本
 
-
 ## 注释
 ### 每个类头部必须编写javadoc
-<pre>
+```
 /**
  * Create by weihuihui@meishubao.com on ${DATE}
  * <p>
@@ -237,19 +234,22 @@ text_color_red
  * 对外传值:<br/>
  * @since 
  */
-</pre>
+```
 
 ### public 修饰的变量必须编写javadoc
 
-### 方法最好都写上注释
-<pre>
-@author 标明开发该类模块的作者 
-@version 标明该类模块的版本 
-@see 参考转向，也就是相关主题
-@param 对方法中某参数的说明
-@return 对方法返回值的说明
-@exception 对方法可能抛出的异常进行说明
-</pre>
+### 方法最好都写上注释（重要逻辑方法必须写）
+
+```
+ /**
+  * @author 作者
+  * @version 版本
+  * @see 参考转向
+  * @param 参数
+  * @return 返回值
+  * @exception 抛出说明
+  */
+```
 
 ## 项目结构（以包为例）
 
