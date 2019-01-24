@@ -1,5 +1,5 @@
 ---
-title: github搭建自己的博客
+title: atlas框架使用
 date: 2018-03-09 14:29:44
 categories: android
 tags:
@@ -27,17 +27,17 @@ gradle.properties的配置进行切换。
 #### atlas 各个实现模块
 
 1. hack toolkit & verifier。
-> 包括了容器所需的所有系统层面的注入和hack的工具类初始化和校验，容器启动时先校验设备是否支持容器运行，不支持则采取降级并记录原因。
+包括了容器所需的所有系统层面的注入和hack的工具类初始化和校验，容器启动时先校验设备是否支持容器运行，不支持则采取降级并记录原因。
 
 2. Bundle Framework（BundleClassLoader 和 AssetPatch）
-> 负责bundle的安装、更新、操作以及管理整个bundle的生命周期。
+负责bundle的安装、更新、操作以及管理整个bundle的生命周期。
 
 3. runtime层 (清单管理、版本管理、以及系统代理三大块)
-> 清单列表纪录各个bundle的信息，版本管理负责检查代码执行时运行正确的代码，系统代理包括DelegateClassLoader（负责路由class加载到各个bundle内部）
+清单列表纪录各个bundle的信息，版本管理负责检查代码执行时运行正确的代码，系统代理包括DelegateClassLoader（负责路由class加载到各个bundle内部）
 和DelegateResource（负责资源查找时能够找到bundle内的资源）。
 
 4. 对外接入层（AtlasBridgeApplication）
-> AtlasBridgeApplication替代项目里的application先执行，完成atlas的初始化，之后在加载项目的application。atlas内部实现了
+AtlasBridgeApplication替代项目里的application先执行，完成atlas的初始化，之后在加载项目的application。atlas内部实现了
 multidex功能，支持build.gradle的配置开关。
 
 

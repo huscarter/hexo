@@ -41,7 +41,7 @@ git branch -d feature/v1.1.0
 ```
 git branch -r -d origin/feature/v1.0.0
 
-git push origin :feature/v1.0.0
+git push origin -d feature/v1.0.0
 ```
 
 #### 拉取\切换分支

@@ -1,10 +1,10 @@
 ---
-title: template
+title: AndroidStudio快捷键纪录
 date: 2013-03-09 10:29:44
 categories: 技术周边
 tags: 
     - 技术周边
-description: AndroidSutio快捷键纪录
+description: AndroidStudio快捷键纪录
 ---
 
 ## 查找
