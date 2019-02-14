@@ -27,7 +27,7 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 方法区是线程共享的内存区域，他被用于存储已被虚拟机加载的类信息、常量、静态变量和即时编译后的代码等数据。
 
 ### java文件结构
-1. 魔数和class版本
+1. 魔数（0xCAFEBABE）和class版本(从45开始)
 2. 常量池
 3. 访问标志
 4. 类索引、父类索引和接口索引集合
@@ -38,6 +38,7 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 ### java文件的加载过程
 1. 加载 
     - 双亲委派机制:为了生成对象的可识别（由同一ClassLoader加载），类首先交由父类加载器去加载。
+    - BootstrapClassLoader,ExtensionClassLoader,ApplicationCLassLoader
 2. 验证
     - 验证.class文件的正确性，比如魔术、版本、访问标志等。（一般都是正确的，但是如果.class文件是自己通过其他方式生成就有可能出现问题）
 3. 准备
@@ -198,6 +199,7 @@ onInterceptTouchEvent(MotionEvent ev)和onTouchEvent(MotionEvent ev)三个方法
 ### SQLite
 
 ### greenDAO
+
 
 
 
