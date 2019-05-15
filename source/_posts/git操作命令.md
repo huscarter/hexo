@@ -93,6 +93,16 @@ git push origin -d tag v1.0.0
 git push origin --tags
 ```
 
+- 查看本地分支的git地址
+```
+git remote -v
+```
+
+- 更换本地分支的git地址
+```
+git remote set-url origin http://xxx.xxx.xxx.git
+```
+
 ## .git 文件过大操作处理
 一般不建议做此操作，因为我们公司不允许使用具有上传功能的网站，所以我们的apk是放到自己的git服务器上
 供测试人员下载，久而久之这会导致git的历史记录过大（每一次记录都是apk文件），下面的介绍是用来删除git的历史记录。
