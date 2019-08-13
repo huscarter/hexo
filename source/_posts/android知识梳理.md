@@ -37,18 +37,20 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 
 ### java文件的加载过程
 1. 加载 
-    - 双亲委派机制:为了生成对象的可识别（由同一ClassLoader加载），类首先交由父类加载器去加载。
+    - 双亲委派机制:为了生成对象可识别（由同一ClassLoader加载），类首先交由父类加载器加载。
     - BootstrapClassLoader,ExtensionClassLoader,ApplicationCLassLoader
 2. 验证
     - 验证.class文件的正确性，比如魔术、版本、访问标志等。（一般都是正确的，但是如果.class文件是自己通过其他方式生成就有可能出现问题）
 3. 准备
     - 为静态变量分配内存（并不是为对象，此时还没有生成对象）
+5. 解析
 4. 初始化
     - 执行类的构造方法，为对象分配内存和初始值。
 5. 卸载
-    - 
 
 ### 虚拟机
+详情见：[java虚拟机](/j2ee/java虚拟机)
+
 #### 虚拟机分类
 1. Sun Class/Exact VM（外挂JIT）
 
@@ -61,11 +63,14 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
     - 检测类是否被加载过否则先加载类
     - 分配内存空间（对具有内存整理的收集器采用指针碰撞，否则采用闲散列表）
     - 初始化为零值
+    
 2. 对象的内存布局
     - 对象头（用于存储对象自身的运行时数据，如哈希码、GC分代年龄、锁状态标志、偏向线程ID、偏向时间戳和类型指针等）
     - 实例数据（真正存储的有效信息，比如各种类型的字段内容，包括从父类继承过来的）
+    
 3. 对象的访问定位
     - 句柄访问
+    - 直接访问
 
 #### 垃圾收集器
 1. 对象可回收算法
@@ -110,13 +115,13 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 ### android四大组建工作原理
 #### activity
 1. 生命周期
-onCreate-->onStart-->onResume-->running-->onPause-->onStop-->onDestroy
+onCreate-->onStart(可见)-->onResume(可操作)-->running-->onPause(不可操作、内存不足可能回收)-->onStop(不可见、必要时可能回收)-->onDestroy
 
 2. launch model
     - standard
     - singleTop
     - singleTask
-    - instance
+    - singleInstance
 
 #### service
 1. 生命周期
@@ -128,7 +133,27 @@ onCreate-->onStart-->onResume-->running-->onPause-->onStop-->onDestroy
     - bindService
 
 #### broadcast receiver
-略
+1. 广播的注册
+    - 静态注册（AndroidManifest），不需要取消注册
+    - java代码动态注册，需要自己取消注册
+    
+2. 发送
+```
+Intent intent = new Intent();
+intent.setAction("com.ryg.receiver.LAUNCH");
+sendBroadcast(intent);
+```
+
+3. 接收
+```
+@Override
+public void onReceive(Context context,Intent intent) {
+ // onReceive函数不能做耗时的事情，参考值：10s以内
+ Log.d("scott","on receive action=" + intent.getAction());
+ String action = intent.getAction();
+ // do some works
+}
+```
 
 #### content provider
 略
@@ -154,17 +179,48 @@ onCreate-->onStart-->onResume-->running-->onPause-->onStop-->onDestroy
 
 #### View的事件分发机制
 事件分发机制类似上级有个问题，一级级下达下去，有最底层的人员处理解决掉。如果最底层的人员不能解决掉，那么就一层层往上抛。
-事件是由activity -> window -> decor  -> view -> 子view一级级往下分发，通过dispatchTouchEvent(MotionEvent ev),
-onInterceptTouchEvent(MotionEvent ev)和onTouchEvent(MotionEvent ev)三个方法来实现。
+事件是由activity -> window -> decor  -> view -> 子view一级级往下分发，通过dispatchTouchEvent(MotionEvent ev),onInterceptTouchEvent(MotionEvent ev)和onTouchEvent(MotionEvent ev)三个方法来实现。
+如下面的为代码：
+```
+public boolean dispatchTouchEvent(MotionEvent ev) { 
+    boolean consume = false;
+    if(onInterceptTouchEvent(ev)) { 
+        consume = onTouchEvent(ev);
+    } else { 
+        consume = child.dispatchTouchEvent(ev); 
+    }
+    return consume; 
+}
+```
 
 #### View的滑动冲突
-通过外层的onInterceptTouchEvent事件拦截和内部的onTouchEvent事件里调用requestDisallowInterceptTouchEvent拦截事件实现。
+通过外层的onInterceptTouchEvent事件拦截和内部的onTouchEvent事件里调用 requestDisallowInterceptTouchEvent 拦截事件实现。
 
 ### android 的IPC
+略
 
 ### android的消息机制
+Handle,MessageQueue和Looper共同协作的过程。
+
+1. MessageQueue消息队列用于存储、查询和删除handle发送的消息，MessageQueue是单链表结构，所以它的插入和删除比较快。
+MessageQueue提供了enqueueMessage和next方法来插入和查询消息，next方法是一个无限循环的方法"for(;;)"，用于读取消息并删除以读取的消息，
+如果没有消息，会执行nativePollOnce(ptr,-1)进入等待状态。
+
+2. Looper通过ThreadLocal实现，作用是创建和使用MessageQueue。Looper的构造方法创建了MessageQueue，Looper的loo()方法进行了消息循环。
+
+3. Handler是消息的发送和接收处理者。消息发送分两种一种是post(Runnable)，一种是send(Message);其实post最终也是调用send(Message)，
+Runnable被赋值给了Message的callback属性。最后Looper循环到了消息会调用handle的dispatchMessage方法将逻辑处理切回到handle线程。
+
 
 ### android的图片处理
+Android对每一个app分配的内存使用大小有限，而图片加载十分消耗内存，所以图片处理在Android中是一个重点。
+
+1. Bitmap的加载：decodeFile,decodeResource,decodeStream和decodeByteArray。
+
+2. 采用BitmapFactory.option来对图片进行处理，一般是通过inSampleSize实现取样处理。
+
+3. 通过LruCache和DiskLruCache实现内存和本地缓存。LRU（最近最少使用算法）是通过期LinkedHashMap数据结构实现的，LinkedHashMap是有序的Map，其顺序
+有两种（插入顺序和读取顺序）；LRU采用读取顺序，如果数据被读取了一次，该数据会被放置链表的末尾。
 
 ### android的组件篇
 #### RecyclerView
@@ -179,26 +235,97 @@ onInterceptTouchEvent(MotionEvent ev)和onTouchEvent(MotionEvent ev)三个方法
 
 ### 第三方框架
 #### fresco
+1. 缓存策略
+分三部分：Bitmap缓存，未解码的图片存内存，磁盘缓存。
+
 #### glide
+1. 缓存策略
+分三部分：内存缓存使用LruCache，activeResource(软引用缓存)，硬盘缓存
+
+#### picasso
+1. 缓存策略
+分二部分：内存缓存使用LruCache，硬盘缓存
+
 #### okhttp
+
 #### rxjava
+
 #### retrofit
 
 ## 网络通信相关
 
-### TCP
+### OSI(open system interconnection)分层
+1. 物理层 传输比特流，媒介为网线、网卡
+2. 数据链路层 传输帧数据，媒介交换机、网桥
+3. 网络层 路由传输组包后的数据，媒介路由器，协议 IP
+4. 传输层 传输包数据，协议TCP、UDP
+5. 会话层 传输包数据，会话(session)管理，设计单工和双工通信
+6. 表示层 数据经过编码或者解码
+7. 应用层 ftp、http、telnet和pop3等协议传输和使用数据
 
-### UDP
+### TCP(transmission control protocol)
+1. 三次握手
+    - client:SYN=x
+    - server:ACK=SYN+1;SYN=y
+    - client:ACK=y+1
+    
+2. 四次挥手
+    - client:FIN=x
+    - server:ACK=x+1
+    - server:FIN=Y
+    - client:ACK=Y+1 
+    -->server close --client close
 
-### HTTP和HTTPS
+### UDP(user datagram protocol)
 
+### HTTP(HyperText transfer protocol)
+1. 版本差异
+    - 1.0
+    问题：tcp连接不能复用（一个页面由多个小图片，每个图片也要重新尽心握手连接）和排头堵塞（head of line blocking，请求是先进先出导致后续请求必须等待前面的完成才能开始）
+    - 1.1
+    优点：支持持久连接（在一个tcp连接上可以发送多个http请求和响应），建立了请求头（header）来支持持久连接和创建虚拟站点（ip和端口好相同的不同站点），增加了请求方法（1.0只有三种GET,POST和HEAD）和状态代码
+    问题：请求可以不用等待上一个响应结束就发起，但是服务器返回仍然要按照请求顺序返回，以确保客户端接受数据的准确性，没有完全解决HOL问题。
+    - 2.0 
+    优点：分帧发送、多路复用，请求和响应不用在按照发送的顺序，大大提高了性能。采用了首部压缩。实现了服务端推送。
+    
+2. 请求和响应
 
+### HTTPS
+1. 请求过程
+    - client：向服务器请求连接【服务器你好，我想建立连接】
+    - server：服务器回应请求，并发送自己的数字证书【客户端你好，我是服务器；这是我的数字证书（数字证书包含公钥）】
+    - client：请证明你是真的服务器【客户端用公钥生成一个字符串发给服务器】
+    - server：服务器用私钥解密客户端的字符串了解了是要证明自己的真实身份，之后服务器回复客户端【服务器返回一个用私钥加密的字符串】
+    - client：客户端用公钥解密服务器的字符串确认了服务器的身份，客户端发送了对称加密信息【对称加密算法和密钥】
+    - server：服务器收到对称加密信息，之后使用对称加密通信
+    
+2. SSL/TSL(secure socket layer / transport layer security)
+SSL安全套接层是早起为了解决http明文传输问题而产生的，当SSL更新到3.0版本时IETF（The Internet Engineering Task Force 互联网工程任务组）将其更名为TLS。
+
+### 加密技术
+1. 对称加密
+加密和解密数据都是用同一个密钥。常被用作信心交换。
+常用的算法由DES(data encryption standard)、RC5和AES(Advanced Encryption Standard)
+
+2. 非对称加密
+公钥对外公开，使用公钥加密的数据只能由私钥解密获得原文。常被用作网络握手连接。
+常用的算法由RSA、ECC和DSA
+
+3. hash算法
+是一种单项的算法，对过hash算法对目标产生一个长度固定的hash值，常被用作数字签名。
+MD5(message digest algorithm)和SHA
 
 ## 数据库相关
 
 ### SQLite
 
 ### greenDAO
+
+### 算法
+1. 排序算法
+
+2. 其他算法
+
 
 
 

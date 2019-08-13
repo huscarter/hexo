@@ -1,11 +1,10 @@
 ---
-title: android知识梳理
+title: android混淆规则
 date: 2019-02-14 22:09:00
 categories: android
 tags:
      - android
-description: 为了应用的安全，一般我们会对apk进行混淆打包和加固。混淆是在release出apk之前做的操作，而加固是对release的apk再次施加的安全措施。
-一般的公司对加固并不是强制要求的，但是添加混淆却是十分必要的，它是防止我们apk被反编译获取源码的一道基础防线。
+description: 为了应用的安全，一般我们会对apk进行混淆打包和加固。混淆是在release出apk之前做的操作，而加固是对release的apk再次施加的安全措施。一般的公司对加固并不是强制要求的，但是添加混淆却是十分必要的，它是防止我们apk被反编译获取源码的一道基础防线。
 ---
 
 ## 混淆配置
@@ -205,7 +204,7 @@ android{
 }
 ```
 
-### RXJava
+### RxJava
 ```
 -dontwarn rx.**
 -keepclassmembers class rx.** { *; }
