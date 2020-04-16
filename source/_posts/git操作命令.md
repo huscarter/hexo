@@ -103,6 +103,17 @@ git remote -v
 git remote set-url origin http://xxx.xxx.xxx.git
 ```
 
+## 分支合并
+- 合并本地分支
+```
+git merge v1.2.0 --no-commit
+```
+
+- 合并远端分支
+```
+git merge origin v1.2.0 --no-commit
+```
+
 ## .git 文件过大操作处理
 一般不建议做此操作，因为我们公司不允许使用具有上传功能的网站，所以我们的apk是放到自己的git服务器上
 供测试人员下载，久而久之这会导致git的历史记录过大（每一次记录都是apk文件），下面的介绍是用来删除git的历史记录。
