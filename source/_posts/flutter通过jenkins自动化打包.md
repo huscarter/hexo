@@ -217,3 +217,12 @@ sudo gem install cocoapods
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
+
+#### 开启jenkins之后xcode的ad_hoc打包失败，错误信息如下
+```
+cannot load such file -- sqlite3 (LoadError)
+```
+1. 解决方案是关闭jenkins，重启电脑。如果还有问题查看是否机器安装了sqlite3，如果没有可运行如下命令安装。
+```
+gem install sqlite3
+```
