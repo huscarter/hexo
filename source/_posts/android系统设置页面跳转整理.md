@@ -92,8 +92,9 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) { // 9 -> 2.3
 是否已开启后台运行权限无法检测。
 
 1. 华为机型
-华为设备都是通过内置应用手机管家实现app的后台运行和自启动权限管理，因此我们需要调起手机管家的主页面（com.huawei.systemmanager.mainscreen.MainScreenActivity）。
-在较老的版本是能直接调起手机管家的应用启动管理列表页的（com.huawei.systemmanager.appcontrol.activity.StartupAppControlActivity），但是在android10的华为手机上测试报没有权限，所以保险起见统一调起手机管家首页。
+- 华为设备都是通过内置应用手机管家实现app的后台运行和自启动权限管理，因此我们需要调起手机管家的主页面（com.huawei.systemmanager.mainscreen.MainScreenActivity）。
+- 在较老的版本是能直接调起手机管家的应用启动管理列表页的（com.huawei.systemmanager.appcontrol.activity.StartupAppControlActivity），但是在android10的华为手机上测试报没有权限，所以保险起见统一调起手机管家首页。
+- 看其他技术文件有推荐使用（com.huawei.systemmanager.optimize.process.ProtectActivity）结果发现在华为手机Android8.1的系统上运行出错。
 ```
 intent.setComponent(new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.mainscreen.MainScreenActivity"));
 startActivity(intent);
