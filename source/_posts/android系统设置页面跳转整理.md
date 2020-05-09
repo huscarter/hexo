@@ -42,6 +42,7 @@ boolean enable = NotificationManagerCompat.from(context).areNotificationsEnabled
 ```
 
 1. 华为机型
+一般情况下是跳转到google api到通知设置页，但是此页面的左面角标开关其实是无效的，因为华为自己实现了一套。如果要调转到有效的左面角标通知设置页面需要跳转到管理应用通知列表页，再找到自己的app进入华为自己的通知设置页才行；管理应用通知列表页对应的页面标识为com.huawei.systemmanager/com.huawei.notificationmanager.ui.NotificationManagmentActivity。
 ```
 // Settings.ACTION_APP_NOTIFICATION_SETTINGS是在api 26 之后才提供的，所以需要版本判断
 // 当版本低于api 26 替代方案是调转到应用详情设置页
