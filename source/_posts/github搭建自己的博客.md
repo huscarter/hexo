@@ -97,7 +97,9 @@ hexo 提供了很多漂亮的主题供我们使用，加入的方法也很简单
 参照命令
 ```
 cd hexo // 进入你的hexo目录
-git clone https://github.com/huyingjie/hexo-theme-A-RSnippet.git themes/a-rsnippet // 通过git拉取主题到hexo/themes目录
+git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant // 通过git拉取主题到hexo/themes目录
+npm install hexo-renderer-pug --save
+npm install hexo-renderer-sass --save
 _config.yml-->theme: a-rsnippet // 将站点_config.yml中的themes配置成你拉取的主题名称(主题的目录名称)
 ```
 
