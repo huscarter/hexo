@@ -103,21 +103,72 @@ startActivity(intent);
 
 2. 小米机型
 ```
-同华为机型
+intent.setAction("miui.intent.action.HIDDEN_APPS_CONFIG_ACTIVITY");
+intent.putExtra("package_name", activity.getPackageName());
+intent.putExtra("package_label", com.lianlianlink.linktalk.R.string.app_name);
+intent.putExtra(Settings.EXTRA_CHANNEL_ID, activity.getApplicationInfo().uid);
+startActivity(intent);
 ```
 
 3. VIVO机型
+Vivo老版本之前是可以直接跳转到电池高消耗应用列表页的（com.vivo.applicationbehaviorengine.ui.ExcessivePowerManagerActivity），但是在新版本Android9上跳该页面会报无权限，所以统一跳转到电池优化管理页。
 ```
-同华为机型
+ComponentName cn = new ComponentName("com.iqoo.powersaving", "com.iqoo.powersaving.PowerSavingManagerActivity");
+intent.setComponent(cn);
+startActivity(intent);
 ```
 
 4. OPPO机型
 ```
-同华为机型
+ComponentName cn = new ComponentName("com.coloros.oppoguardelf", "com.coloros.powermanager.fuelgaue.PowerUsageModelActivity");
+intent.setComponent(cn);
+startActivity(intent);
 ```
 
 5. 魅族机型
+魅族同华为一样需要跳转到手机管家页面
 ```
-同华为机型
+Intent intent = getPackageManager().getLaunchIntentForPackage("com.meizu.safe");
+startActivity(intent);
+```
+
+### 自运行设置页
+是否已开启自运行权限无法检测。
+
+1. 华为机型
+- 华为设备都是通过内置应用手机管家实现app的后台运行和自启动权限管理，因此我们需要调起手机管家的主页面（com.huawei.systemmanager.mainscreen.MainScreenActivity）。
+- 在较老的版本是能直接调起手机管家的应用启动管理列表页的（com.huawei.systemmanager.appcontrol.activity.StartupAppControlActivity），但是在android10的华为手机上测试报没有权限，所以保险起见统一调起手机管家首页。
+- 看其他技术文件有推荐使用（com.huawei.systemmanager.optimize.process.ProtectActivity）结果发现在华为手机Android8.1的系统上运行出错。
+```
+intent.setComponent(new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.mainscreen.MainScreenActivity"));
+startActivity(intent);
+```
+
+2. 小米机型
+```
+ComponentName cn = new ComponentName("com.miui.securitycenter", "com.miui.permcenter.autostart.AutoStartManagementActivity");
+intent.setComponent(cn);
+activity.startActivity(intent);
+```
+
+3. VIVO机型
+```
+ComponentName cm = new ComponentName("com.vivo.permissionmanager", "com.vivo.permissionmanager.activity.BgStartUpManagerActivity");
+intent.setComponent(cm);
+startActivity(intent);
+```
+
+4. OPPO机型
+```
+ComponentName cn = new ComponentName("com.coloros.safecenter", "com.coloros.safecenter.startupapp.StartupAppListActivity");
+intent.setComponent(cn);
+startActivity(intent);
+```
+
+5. 魅族机型
+魅族同华为一样需要跳转到手机管家页面
+```
+Intent intent = getPackageManager().getLaunchIntentForPackage("com.meizu.safe");
+startActivity(intent);
 ```
 
