@@ -28,7 +28,7 @@ Canva.drawArc(Rect rect, double startAngle, double sweepAngle, bool useCenter, P
 ```
 
 2. 画一个圆角正方形。
-矩形的尺寸就是设计同学设计的大小，此处要注意矩形的的位置取决于扇形的位置。扇形圆为圆角正方形的内切圆，而圆角正方形的位置由左上角的坐标确定。扇形的控制矩形左上角为原点，推到出来圆角正方是的左上角坐标为(wrapWidth/2-arcWidth/2,wrapWidth/2-arcWidth/2);其中wrapWidth为扇形控制矩形的宽度，arcWidth为圆角矩形的宽度。
+- 矩形的尺寸就是设计同学设计的大小，此处要注意矩形的的位置取决于扇形的位置。扇形圆为圆角正方形的内切圆，而圆角正方形的位置由左上角的坐标确定。扇形的控制矩形左上角为原点，推到出来圆角正方是的左上角坐标为(wrapWidth/2-arcWidth/2,wrapWidth/2-arcWidth/2);其中wrapWidth为扇形控制矩形的宽度，arcWidth为圆角矩形的宽度。
 ```
 /// 目前dart库的Canvas提供直接使用的方法
 /// 
