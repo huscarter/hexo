@@ -4,7 +4,7 @@ date: 2019-10-31 09:29:44
 categories: jenkins
 tags:
      - jenkins
-description:
+description: jenkins自动部署搞起。
 ---
 
 ### 安装前准备
