@@ -1,5 +1,5 @@
 ---
-title: flutter通过jenkins自动化打包
+title: flutter接入友盟社会化分享
 date: 2020-04-17 14:42:44
 categories: flutter
 tags:
