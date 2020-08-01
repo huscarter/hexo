@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/source/_posts/android架构梳理.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/_posts/kotlin知识整理.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/_posts/常用设计模式整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/android知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android知识梳理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/dart语法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/dart语法.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/移动开发设计规范.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/移动开发设计规范.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/读书计划.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/读书计划.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/maupassant" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/maupassant/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/.travis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/maupassant/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/LICENSE" afterDir="false" />
