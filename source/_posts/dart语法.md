@@ -7,6 +7,29 @@ tags:
 description: dart语法介绍。
 ---
 
+### dart类型（dart一切皆为Object的子类，即便是int类型，默认值null）
+#### 一类
+1. int
+2. double（双精度，没有float类型）
+3. bool
+4. String
+5. List
+6. Map
+7. Set
+8. dynamic
+
+#### 二类
+1. class（类为单extends，多实现implement）
+2. abstract class（支持抽象方法的类）
+3. mixins（with用来复用多个类之间的代码减少以耦合，with类不能有构造方法）
+4. 接口(有接口，但是没有interface关键字；普通类和抽象类都可被implement，但是被implement的类需要将其属性和方法都实现一遍)
+
+### 构造方法
+1. 普通构造函数（Test()）
+2. 命名构造函数（Test.fromJson(Map json)）
+3. 常量构造函数（const Test()//创建编译器常量，不能有方法体）
+4. 工厂构造函数（factory Test(String type){}// 工厂模式可以返回对象）
+
 ### 类定义
 ```
 class Test{
@@ -48,6 +71,8 @@ class Test{
     }
 }
 ```
+
+### dart 
 
 
 
