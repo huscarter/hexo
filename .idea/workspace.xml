@@ -2,66 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/themes/maupassant" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/de-DE.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/de-DE.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/es-ES.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/es-ES.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/fr-FR.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/fr-FR.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/ko.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/ko.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/ru.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/ru.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/zh-CN.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/zh-CN.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/languages/zh-TW.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/languages/zh-TW.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/after_footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/after_footer.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/comments.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/comments.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/footer.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/head.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/helpers.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/helpers.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/mathjax.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/mathjax.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/mathjax2.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/mathjax2.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/paginator.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/paginator.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/post_nav.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/post_nav.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/tag.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/tag.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/totop.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/totop.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_widget/category.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_widget/category.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_widget/links.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_widget/links.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_widget/recent_comments.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_widget/recent_comments.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_widget/recent_posts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_widget/recent_posts.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_widget/search.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_widget/search.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_widget/tag.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_widget/tag.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/archive.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/archive.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/base-without-sidebar.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/base-without-sidebar.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/base.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/base.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/page.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/page.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/post.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/post.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/single-column.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/single-column.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/timeline.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/timeline.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/css/donate.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/css/donate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/donate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/donate/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/AliPayQR.png" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/AliPayQR.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/BTCQR.png" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/BTCQR.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/WeChatQR.png" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/WeChatQR.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/alipay.svg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/alipay.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/bitcoin.svg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/bitcoin.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/github.svg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/github.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/like.svg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/like.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/paypal.svg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/paypal.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/img/wechat.svg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/img/wechat.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/codeblock-resizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/codeblock-resizer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/donate.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/donate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/fancybox.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/fancybox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/gitment.browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/gitment.browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/share.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/share.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/smartresize.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/smartresize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/source/js/totop.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/source/js/totop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/apk的一生.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/h5技术整理.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/im技术整理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Flutter技术介绍.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter技术介绍.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/android知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android知识梳理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/dart语法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/dart语法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/常用设计模式整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/常用设计模式整理.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +37,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_posts" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -384,8 +333,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539338527161</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="android知识梳理&#10;android开发规范&#10;C++学习笔记">
+      <created>1596299573284</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1596299573285</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

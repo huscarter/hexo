@@ -44,6 +44,7 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 3. 准备
     - 为静态变量分配内存（并不是为对象，此时还没有生成对象）
 5. 解析
+    - 将符号引用转成直接引用
 4. 初始化
     - 执行类的构造方法，为对象分配内存和初始值。
 5. 卸载
@@ -95,16 +96,15 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 3. blocked
     - 等待阻塞 调用wait()让线程等待某项工作完成
     - 同步阻塞 线程获取synchronized同步锁失败
-    - 其他阻塞 调用sleep（直接睡眠不释放资源）和join（内部调用wait清醒等待会释放资源）方法
-    (join方法解释:thread parent 的run方法中调用thread child的join方法，此时thread parent会等待thread child结束后再执行)
+    - 其他阻塞 调用sleep（直接睡眠不释放资源）和join（内部调用wait清醒等待会释放资源）方法。(join方法解释:thread parent 的run方法中调用thread child的join方法，此时thread parent会等待thread child结束后再执行)
 4. running 正在运行
 5. terminate 执行完程序或者异常退出
 
 #### java锁（可见行、原子性和有序性）
 1. synchronized (能确保同一时刻只执行某个代码块或者方法，也可以确保线程的可见行)
     - 普通同步方法（实例方法）：锁是当前实例对象，进入同步代码前要获得当前实例的锁
-    - 静态同步方法：锁是当前类的class对象，进入同步代码前要获得当前类对象的锁
-    - 同步方法块：锁是括号里面的对象，对给定对象加锁，进入同步代码库前要获得给定对象的锁。 
+    - 静态同步方法：锁是当前类的class对象，进入同步代码前要获得当前class对象的锁
+    - 同步方法块：锁是括号里面的对象，对给定对象加锁，进入同步代码块前要获得给定对象的锁。 
 
 2. volatile（确保对象的可见性）
 
@@ -119,6 +119,40 @@ description: 最近在找工作，抽时间重新整理了下android开发所用
 ## android知识体系
 
 ### android体系结构简介
+1. application
+
+2. framework
+ - ActivityManager
+ - WindowManager
+ - ServiceManager
+ - PackageManager
+ - TelephoneManager
+ - LocationManager
+ - ContentProvider
+ - NotificationManager
+ - ...
+
+3. library & runtime
+ - SurfaceManager
+ - OpenGL
+ - SSL
+ - WebKit
+ - SQLite
+ - ...
+
+4. linux kernel
+ - Display Driver
+ - Camera Driver
+ - Bluetooth Driver
+ - USB Driver
+ - IBinder Driver
+ - WIFI Driver
+ - Power Driver
+ - ...
+
+### android的启动过程
+
+### activity的加载过程
 
 ### android四大组建工作原理
 #### activity
@@ -232,6 +266,29 @@ Android对每一个app分配的内存使用大小有限，而图片加载十分�
 
 ### android的组件篇
 #### RecyclerView
+[参考博文](https://zhuanlan.zhihu.com/p/80475040)
+1. LayoutManager（用于控制item的排放，横、纵和叠加）
+2. RecyclerView.Adapter（规范ViewHolder和缓存机制）
+3. ItemAnimator（可以根据ViewHolder在RecyclerView的各个状态添加动画）
+4. ItemDecoration（添加item的分割线）
+5. 缓存机制
+```
+public final class Recycler {
+    // Scrap (view)：在布局期间进入临时分离状态的子视图。
+    
+    // 存放ViewHolder对象的ArrayList,这一级缓存是没有容量限制的，只要符合条件的我来者不拒
+    final ArrayList<ViewHolder> mAttachedScrap = new ArrayList<>();
+    // 存放的是发生了变化的ViewHolder
+    ArrayList<ViewHolder> mChangedScrap = null;
+    // 存放的是dettach掉的视图
+    final ArrayList<ViewHolder> mCachedViews = new ArrayList<ViewHolder>();
+    // 保存的ViewHolder不仅仅是removed掉的视图，而且是恢复了出厂设置的视图
+    RecycledViewPool mRecyclerPool;
+    // 这一级缓存是留给开发者自由发挥的
+        private ViewCacheExtension mViewCacheExtension;
+    ...
+}
+```
 #### NestedScrollView
 
 ### android开发模式
@@ -255,9 +312,13 @@ Android对每一个app分配的内存使用大小有限，而图片加载十分�
 分二部分：内存缓存使用LruCache，硬盘缓存
 
 #### okhttp
+[详细介绍文章](https://www.jianshu.com/p/d98be38a6d3f)
 
 #### rxjava
-
+1. 原理
+2. 操作符
+ - observable.just(1,2 3)// 最多9个
+ - Observable.fromArray(arr)// 传递的参数是一个数组，解决了just操作符的个数限制的缺点
 #### retrofit
 
 ## 网络通信相关
