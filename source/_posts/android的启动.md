@@ -1,9 +1,9 @@
 ---
-title: apk的一生
+title: android的启动
 date: 2020-08-05 14:29:44
 categories: android
 tags:
-     - apk
+     - android
 description: 讲述了apk从打包到安装再到运行和删除的过程。
 ---
 
@@ -16,11 +16,7 @@ description: 讲述了apk从打包到安装再到运行和删除的过程。
 [参考](https://blog.csdn.net/mysimplelove/article/details/93619361)
 
 ## apk的运行
-[参考](https://blog.csdn.net/mysimplelove/article/details/93722772)
-[参考](https://blog.csdn.net/lu1024188315/article/details/75722420)
-[参考](https://www.jianshu.com/p/ab9b83a77af6)
-
-1. Launcher activity响应快捷图标点击事件onClick调用Instrumentation.execStartActivity
+1. Launcher activity响应快捷图标点击事件onClick调用 Instrumentation.execStartActivity。（Instrumentation用于监控应用程序和系统的交互）
 ```
 public void onClick(View v) {
     Object tag = v.getTag();
@@ -171,7 +167,7 @@ private final void startProcessLocked(ProcessRecord app, String hostingType,Stri
     // 设置了进程创建完成后的入口点（Process.start的参数注释），因此Zygote进程完成了进程创建的操作后就会执行ActivityThread的main()方法
     if (entryPoint == null) entryPoint = "android.app.ActivityThread";
     checkTime(startTime, "startProcess: asking zygote to start proc");
-    // Process.start方法创建应用进程是通过Zygote进程完成的，设置好参数和创建选项后通过zygoteState.writer将数据交给Zygote进程，它会调用fork()创建进程。
+    // Process.start方法创建应用进程是通过 Zygote 进程完成的，设置好参数和创建选项后通过zygoteState.writer将数据交给Zygote进程，它会调用fork()创建进程。
     Process.ProcessStartResult startResult = Process.start(entryPoint,app.processName, uid, uid, gids, debugFlags, mountExternal,app.info.targetSdkVersion, app.info.seinfo, requiredAbi, instructionSet,app.info.dataDir, entryPointArgs);
 }
 ```
@@ -309,5 +305,10 @@ boolean attachApplicationLocked(ProcessRecord app) throws RemoteException {
     return didSomething;
 }
 ```
+
+PS:
+[参考](https://blog.csdn.net/mysimplelove/article/details/93722772)
+[参考](https://blog.csdn.net/lu1024188315/article/details/75722420)
+[参考](https://www.jianshu.com/p/ab9b83a77af6)
 
 

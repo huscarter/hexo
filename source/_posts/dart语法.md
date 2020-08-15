@@ -7,7 +7,7 @@ tags:
 description: dart语法介绍。
 ---
 
-### dart类型（dart一切皆为Object的子类，即便是int类型，默认值null）
+### 类型（dart一切皆为Object的子类，即便是int类型，默认值null）
 #### 一类
 1. int
 2. double（双精度，没有float类型）
@@ -24,11 +24,39 @@ description: dart语法介绍。
 3. mixins（with用来复用多个类之间的代码减少以耦合，with类不能有构造方法）
 4. 接口(有接口，但是没有interface关键字；普通类和抽象类都可被implement，但是被implement的类需要将其属性和方法都实现一遍)
 
-### 构造方法
+### 非空安全
+#### 定义
+```
+var test = null // 不需要显示定义
+```
+
+#### 非空判断
+ - 安全调用运算符（?.）
+ - 强制解包（无，因为dart默认所有对象可空）
+ - Elvis运算符（??）
+ 
+### 操作符
+#### ==
+```
+同java的==
+```
+
+#### is
+```
+用于对象判断
+```
+
+### 构造方法（不能重载）
 1. 普通构造函数（Test()）
 2. 命名构造函数（Test.fromJson(Map json)）
 3. 常量构造函数（const Test()//创建编译器常量，不能有方法体）
 4. 工厂构造函数（factory Test(String type){}// 工厂模式可以返回对象）
+
+### 析构函数（无）
+
+### 常量
+1. final 运行时固定
+2. const 在编译期固定
 
 ### 类定义
 ```
@@ -62,21 +90,43 @@ class Test{
 ### 方法定义
 ```
 class Test{
-    void function0(String str0,String str1){
+    // 没有访问修饰符，没有方法关键字，返回值在方法前面声明
+    void _function0(String str0,String str1){
         debugPrint("$str0$str1");
     }
     
-    String _function0(String str0,String str1){
+    @Override
+    String _function1(String str0,String str1){
         return str0+str1;
     }
 }
 ```
 
-### dart 异步实现
+### 单例实现
+```
+class Test{
+    static Test _instance;
+    
+    // 构造方法私有
+    Test._();
+
+    // 没有多线程，不存在线程安全
+    static Test getInstance() {
+        if (_instance == null) {
+          _instance = Test._();
+        }
+        return _instance;
+    }
+}
+```
+
+### 异步实现
 1. event queue
 
 2. microtask queue
 
+### 闭包
+ 
 
 
 

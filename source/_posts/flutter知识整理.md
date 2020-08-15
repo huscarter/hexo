@@ -56,7 +56,7 @@ flutter的github地址。
 
 ### flutter种的组件key
 1. 当widget rebuild的时候会迭代element tree，通过runType和key来判断两个element是否相同，如果相同则通过element.build来更新，否则会删除此element生成新的element更新。
-2. GlobalKey和LocalKey分别作用全局和当前业。
+2. GlobalKey和LocalKey分别作用全局和当前页。
 
 ### flutterUI更新过程
 1. 调度到engine请求一帧
@@ -87,6 +87,11 @@ flutter的github地址。
  - flutter打开原生页面（通过MessageChannel调用原生方法打开原生页面）
 
 5. flutter app的页面栈管理
+ - 阿里
+ - 
 
+### flutter业务相关
+#### 页面跳转
 
 ### flutter编译
+

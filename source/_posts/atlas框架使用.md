@@ -66,12 +66,13 @@ multidex功能，支持build.gradle的配置开关。
     - BridgeApplicationDelegate#attachBaseContext()方法里回调build.gradle中配置的方法。
 
 5. atlas.init
-
     - 首先是读取manifest中的配置数据multidexEnable和mRealApplicationName，这两个数据也是在编译期由atlas插件写到manifest中的。
     - 对系统关键节点进行了hook。
 
 
 
-## [官方文档](https://alibaba.github.io/atlas/)
+## 文档
+1. [官方文档](https://alibaba.github.io/atlas/)
+2. [框架说明文档](https://alibaba.github.io/atlas/principle-intro/Runtime_principle.html)
 
 
