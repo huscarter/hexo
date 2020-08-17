@@ -1,9 +1,9 @@
 ---
 title: java发展史
 date: 2016-09-12 06:55:31
-categories: j2ee
+categories: java
 tags: 
-      - j2ee
+      - java
 description: 1991年James Gosling博士领导的Green Project开始启动，目的是开发一种能够在各种消费性电子产品上运行的程序架构。这个计划的产品就是java的前身Oak（橡树）
 ---
 

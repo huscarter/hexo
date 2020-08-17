@@ -1,9 +1,9 @@
 ---
 title: java运行原理
 date: 2016-09-12 06:56:04
-categories: j2ee
+categories: java
 tags: 
-      - j2ee
+      - java
 description: 讲述java开发环境、java虚拟机、java内存、java文件运行等
 ---
 

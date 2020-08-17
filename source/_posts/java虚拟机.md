@@ -1,9 +1,9 @@
 ---
 title: java虚拟机
 date: 2016-10-31 17:13:13
-categories: j2ee
+categories: java
 tags: 
-      - j2ee
+      - java
 description: Java虚拟机一种用于计算机设备的规范，可用不同的方式（软件或硬件）加以实现
 ---
 
@@ -49,7 +49,7 @@ HotSpot VM是Sun JDK和Open JDK中使用的虚拟机，也是目前使用范围�
 ### Java内存区域与内存溢出异常
 略
 
-1. 内存区域 [(链接)](/j2ee/java运行原理)
+1. 内存区域 [(链接)](/java/java运行原理)
 
 2. 虚拟机对象探秘
 
@@ -229,6 +229,34 @@ Safepoint有个缺陷，加入程序“不运行”，即程序没有分配到CP
 略
 5. 空间分配担保
 略
+
+### 附加
+
+1. 针对新生代的GC称为Minor GC，针对老年代的GC称为Major GC，整个堆GC称为Full GC
+2. 在调用了System.GC()之后并没有真正执行GC，而是而只是记录了一次GC请求，只有当justRanFinalization标志为true时才会执行。
+```
+// 只有当justRanFinalization标志为true时才会执行gc
+public static void gc() {
+    boolean shouldRunGC;
+    synchronized(lock) {
+        // justRanFinalization 设置为true的方法是runFinalization
+        shouldRunGC = justRanFinalization;
+        if (shouldRunGC) {
+            justRanFinalization = false;
+        } else {
+            runGC = true;
+        }
+    }
+    if (shouldRunGC) {
+        Runtime.getRuntime().gc();
+    }
+}
+
+// 所以如果想要立即执行GC可以执行一下方法
+System.gc(); 
+runtime.runFinalizationSync();
+System.gc();
+```
 
 注：本文内容引用了周志明的《深入理解Java虚拟机》。
 
