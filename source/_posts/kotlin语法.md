@@ -40,7 +40,7 @@ var test? = null // // 不需要显示定义?
 同java的equals
 ```
 
-#### 三个等到
+#### ===
 ```
 同java的 ==
 ```
@@ -120,7 +120,7 @@ class Test{
     var test1=1;// 等同 int test1=1;
     var test2="test2";// 等同 String test2="test";
     var test3=1.1;// 等同 double test3=1.1;
-    var _test4="private修饰前面加_";
+    var _test4="xxx";等同 String test3=1.1;
 }
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: android的启动
+title: binder通信机制
 date: 2020-08-05 14:29:44
 categories: android
 tags:
