@@ -16,28 +16,28 @@ git branch v3.0.0
 ```
 
 #### 查看分支
-- 查看本地分支
+1. 查看本地分支
 ```
 git branch
 ```
 
-- 查看所有分支
+2. 查看所有分支
 ```
 git branch -a
 ```
 
-- 查看远端分支
+3. 查看远端分支
 ```
 git branch -r
 ```
 
 #### 删除分支
-- 删除本地分支
+1. 删除本地分支
 ```
 git branch -d feature/v1.1.0
 ```
 
-- 删除远端分支
+2. 删除远端分支
 ```
 git branch -r -d origin/feature/v1.0.0
 
@@ -65,51 +65,50 @@ git push origin <本地分支名> // 再同步到服务器
 
 
 ## tag操作
-
-- 查看本地分支
+1. 查看本地分支
 ```
 git tag --list
 ```
 
-- 新建tag
+2. 新建tag
 ```
 git tag v3.0.0
 ```
 
-- 删除本地tag
+3. 删除本地tag
 ```
 git tag -d v1.0.0
 ```
 
-- 删除远端tag
+4. 删除远端tag
 ```
 git tag -d v1.0.0
 
 git push origin -d tag v1.0.0
 ```
 
-- 将本地tags推送到远端
+5. 将本地tags推送到远端
 ```
 git push origin --tags
 ```
 
-- 查看本地分支的git地址
+6. 查看本地分支的git地址
 ```
 git remote -v
 ```
 
-- 更换本地分支的git地址
+7. 更换本地分支的git地址
 ```
 git remote set-url origin http://xxx.xxx.xxx.git
 ```
 
 ## 分支合并
-- 合并本地分支
+1. 合并本地分支
 ```
 git merge v1.2.0 --no-commit
 ```
 
-- 合并远端分支
+2. 合并远端分支
 ```
 git merge origin v1.2.0 --no-commit
 ```

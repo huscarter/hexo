@@ -169,7 +169,7 @@ public class UMShareManager {
 ```
 
 3. flutter 通过插件调用Android端的接口（java）
-- flutter端的代码
+3.1 flutter端的代码
 ```
 // 创建本地插件channel
 static const MethodChannel channel = const MethodChannel("本地插件通道名");
@@ -178,7 +178,7 @@ static const MethodChannel channel = const MethodChannel("本地插件通道名"
 channel.invokeMethod("shareWebFunc", {"url": url,"title": "标题","thumb": "缩略图地址","desc": "描述","platform":"wechat"});
 ```
 
-- 原生端代码
+3.2 原生端代码
 ```
 // 此类可以在MainActivit:FlutterActivity的configureFlutterEngine方法初始化
 public class LocalPluginXX implements FlutterPlugin{
@@ -358,12 +358,12 @@ class UMShareManager{
 ```
 
 3. flutter 通过插件调用iOS端的接口（swift）
-- flutter端的代码
+3.1 flutter端的代码
 ```
 同Android部分，flutter代码为同一套。
 ```
 
-- 原生端代码
+3.2 原生端代码
 ```
 // AppDelegate 类本地插件
 @objc class AppDelegate: FlutterAppDelegate{

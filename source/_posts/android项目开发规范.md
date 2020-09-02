@@ -24,68 +24,67 @@ pascal，首字母一律大写。（如：TradingCoupon）
 
 ### 文件命名
 1. java类命名（非接口）
-- pascal，首字母一律大写。如：UserAddress.java）
-- activity类，后面需要添加Activity。（如：UserAddressActivity.java）
-- adapter类，后面需要添加Adapter。（如：UserAddressAdapter.java）
-- fragment类，后面需要添加Fragment。（如：UserAddressFragment.java）
-- bean，后面不加Bean。（如：User .java）
-- Uitl类，需要添加Util。（如DateUtil.java）
-- 数据库操作文件，后面要加Dao。（如：UserDao. java）
+1.1 pascal，首字母一律大写。如：UserAddress.java）
+1.2 activity类，后面需要添加Activity。（如：UserAddressActivity.java）
+1.3 adapter类，后面需要添加Adapter。（如：UserAddressAdapter.java）
+1.4 fragment类，后面需要添加Fragment。（如：UserAddressFragment.java）
+1.5 bean，后面不加Bean。（如：User .java）
+1.6 Uitl类，需要添加Util。（如DateUtil.java）
+1.7 数据库操作文件，后面要加Dao。（如：UserDao. java）
 
 2. java类（接口）
-- 普通的借口类，命名为IXxx.java。（如IuserRequest.java）
-- Listener回调之类的用OnXxLisenter形式。（如 OnClickListener.java）
-- 其他的自定义，但是必须是pascal命名格式。
+2.1 普通的借口类，命名为IXxx.java。（如IuserRequest.java）
+2.2 Listener回调之类的用OnXxLisenter形式。（如 OnClickListener.java）
+2.3 其他的自定义，但是必须是pascal命名格式。
 
 3. 布局文件
-- Activity布局文件:一律按activity_xx.xml的形式。（如actvity_user_address.xml）
-- Adapter布局文件:一律按item_xx.xml的形式。 (如item_user_address.xml)
-- include 布局文件:一律以include_xx.xml的形式。（如：include_user_address.xml）
+3.1 Activity布局文件:一律按activity_xx.xml的形式。（如actvity_user_address.xml）
+3.2 Adapter布局文件:一律按item_xx.xml的形式。 (如item_user_address.xml)
+3.3 include 布局文件:一律以include_xx.xml的形式。（如：include_user_address.xml）
 
 4. 图片(一律按xx_xx_xx.png的形式)
-- 图标：icon_user_address.png
-- 按钮：
-    - btn_commt.png（正常状态）
-    - btn_commt_un.png（点击时的状态）
-- 背景：bg_login.png
+4.1 图标：icon_user_address.png
+4.2 按钮：
+4.2.1 btn_commt.png（正常状态）
+4.2.2 btn_commt_un.png（点击时的状态）
+4.3 背景：bg_login.png
 
 5. Drawable描述文件
-- 带有点击效果的selector
-    - selector_corner_orange.xml（圆角橙色）
-    - selector_rectangle_orange.xml（直角橙色）
-- 带有check属性值selector
-    - chck_corner_orange.xml（圆角橙色）
-    - chck_rectangle_orange.xml（直角橙色）
-- 圆角有填充色
-    - shape_corner_orange.xml
-- 圆角有填充色有边框
-    - shape_corner_border_orange.xml
-- 圆角只有边框图
-    - stroke_corner_orange.xml
-- 直角只有边框图
-    - stroke_rectangle_orange.xml
-
+5.1 带有点击效果的selector
+5.1.1 selector_corner_orange.xml（圆角橙色）
+5.1.2 selector_rectangle_orange.xml（直角橙色）
+5.2 带有check属性值selector
+5.2.1 chck_corner_orange.xml（圆角橙色）
+5.2.2 chck_rectangle_orange.xml（直角橙色）
+5.3 圆角有填充色
+5.3.1 shape_corner_orange.xml
+5.4 圆角有填充色有边框
+5.4.1 shape_corner_border_orange.xml
+5.5 圆角只有边框图
+5.5.1 stroke_corner_orange.xml
+5.6 直角只有边框图
+5.6.1 stroke_rectangle_orange.xml
 
 ### android控件id命名
 控件:缩写
-- RelativeLayout:rl_
-- LinearLayout:ll_
-- TextView:tv_
-- EditText:et_
-- ImageView:iv_
-- Buttom:btn_
-- CheckBox:cb_
-- RadioButton:rb_
-- RadioGroup:rg_
-- TimerPicker:tp_
-- ProgressBar:pb_
-- ScrollView:sv_
-- SimpleDraweeView:sdv_
-- include:i_
-- FrameLayout:fl_
-- TableLayout:tl_
-- GridLayout:gl_
-- Switch:s_
+1. RelativeLayout:rl_
+2. LinearLayout:ll_
+3. TextView:tv_
+4. EditText:et_
+5. ImageView:iv_
+6. Buttom:btn_
+7. CheckBox:cb_
+8. RadioButton:rb_
+9. RadioGroup:rg_
+10. TimerPicker:tp_
+11. ProgressBar:pb_
+12. ScrollView:sv_
+13. SimpleDraweeView:sdv_
+14. include:i_
+15. FrameLayout:fl_
+16. TableLayout:tl_
+17. GridLayout:gl_
+18. Switch:s_
 
 ## 代码
 ### 类中的属性、方法和内部类声明需要区分放置
@@ -254,25 +253,26 @@ text_color_red
 ## 项目结构（以包为例）
 
 1. UI层
-- activity
-- adapter
-- view（自定义view）
-- fragment
+1.1 activity
+1.2 adapter
+1.3 view（自定义view）
+1.4 fragment
 2. 业务逻辑层
-- 网络请求
-    - net
-- 数据库访问
-    - dao
-- utility
-    - DateFormat.java
-    - Bitmap.java
-    - Notification.java
-    - Shared Preference.java
-    - Environment.java
-    - CommonUtil.java
+2.1 网络请求
+2.1.1 net
+3. 数据库访问
+3.1 dao
+4. utility
+4.1 DateFormat.java
+4.2 Bitmap.java
+4.3 Notification.java
+4.4 Shared Preference.java
+4.5 Environment.java
+4.6 CommonUtil.java
+
 3. data层
-- bean
-- provider
+3.1 bean
+3.2 provider
 4. service
 5. receiver
 6. widget

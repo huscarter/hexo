@@ -89,13 +89,13 @@ ANDROID_HOME=[你Android的sdk目录]
 #### Android任务
 1. 选择构建一个自由风格的项目，输入自己的任务名称，推荐是自己的项目名
 2. 进入任务，选择进入配置页面配置
--  源码管理（git为例）
+2.1  源码管理（git为例）
 ```
 在Repository URL中输入自己项目的地址，如https://gitlab.xxx.com/app/xxx.git。
 在Credentials中添加git的账号密码。
 在指定分支中设置git分支，如*/v1.0.0
 ```
-- 如有需要自行配置构建触发器
+2.2 如有需要自行配置构建触发器
 ```
 勾选Poll SCM，在输入框中输入想要的触发表达式即可。
 SCM语法[分钟][小时][天][月][周]。
@@ -103,7 +103,7 @@ H/60 * * * *（每个小时构建一次）。
 0 * * * *（每个小时的第0分钟构建）
 0 10,14 * * 1-5(每周一到周五的10点和14点构建一次)
 ```
-- 构建shell
+2.3 构建shell
 ```
 flutter clean
 # huawei为渠道标识
@@ -114,17 +114,17 @@ fir publish build/app/outputs/apk/baidu/release/app-baidu-release.apk -T "此处
 #### iOS任务
 1. 选择构建一个自由风格的项目，输入自己的任务名称，推荐是自己的项目名
 2. 进入任务，选择进入配置页面配置
--  源码管理（同Android）
+2.1  源码管理（同Android）
 
-- 如有需要自行配置构建触发器（同Android）
+2.2 如有需要自行配置构建触发器（同Android）
 
-- 构架环境
+2.3 构架环境
 ```
 勾选Keychains and Code Signing Identities，选择添加Keychain，选择已上传的login.keychain。
 勾选Mobile Provisioning Profiles，选择添加Provisioning Profiles，选择已上传的Provisioning Profiles。
 ```
 
-- 构建shell
+2.4 构建shell
 ```
 security set-key-partition-list -S apple-tool:,apple: -s -k "你电脑的密码" ~/Library/Keychains/login.keychain-db
 #假设脚本放置在与项目相同的路径下

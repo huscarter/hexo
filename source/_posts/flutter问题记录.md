@@ -19,16 +19,16 @@ brew tap homebrew/cask-versions
 ```
 
 3. 环境变量
-- java
+3.1 java
 ```
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
 ```
-- flutter
+3.2 flutter
 ```
 export FLUTTER_HOME=/Users/weihh/Library/Flutter/sdk
 export PATH=$PATH:$FLUTTER_HOME/bin
 ```
-- android
+3.3 android
 ```
 export ANDROID_HOME=/Users/weihh/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools

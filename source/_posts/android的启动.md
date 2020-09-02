@@ -45,13 +45,16 @@ public void startActivityForResult(Intent intent, int requestCode, @Nullable Bun
 
 2. Instrumentation通过ActivityManagerProxy调用到ActivityManagerService.startActivity。
 ```
-public ActivityResult execStartActivity(Context who, IBinder contextThread, IBinder token, Activity target,Intent intent, int requestCode, Bundle options) {
+public ActivityResult execStartActivity(Context who, IBinder contextThread, IBinder token, Activity target,
+    Intent intent, int requestCode, Bundle options) {
+
     IApplicationThread whoThread = (IApplicationThread) contextThread;
     try {
         intent.migrateExtraStreamToClipData();
         intent.prepareToLeaveProcess();
         // 这里最终调用到ActivityManagerProxy.startActivity
-        int result = ActivityManagerNative.getDefault().startActivity(whoThread, who.getBasePackageName(), intent,intent.resolveTypeIfNeeded(who.getContentResolver()),token, target != null ? target.mEmbeddedID : null,requestCode, 0, null, options);
+        int result = ActivityManagerNative.getDefault().startActivity(whoThread, who.getBasePackageName(), 
+            intent,intent.resolveTypeIfNeeded(who.getContentResolver()),token, target != null ? target.mEmbeddedID : null,requestCode, 0, null, options);
         checkStartActivityResult(result, intent);
     } catch (RemoteException e) {
         throw new RuntimeException("Failure from system", e);
@@ -62,7 +65,8 @@ public ActivityResult execStartActivity(Context who, IBinder contextThread, IBin
 
 3. ActivityManagerProxy通过Binder调用ActivityManagerService的START_ACTIVITY_TRANSACTION。（ActivityManagerProxy是ActivityManagerService的代理类，它通过Binder将Launcher进程和ActivityManagerService所在的system_server进程通讯）
 ```
-public int startActivity(IApplicationThread caller, String callingPackage, Intent intent,String resolvedType, IBinder resultTo, String resultWho, int requestCode,int startFlags, ProfilerInfo profilerInfo, Bundle options) throws RemoteException {
+public int startActivity(IApplicationThread caller, String callingPackage, Intent intent,String resolvedType, 
+    IBinder resultTo, String resultWho, int requestCode,int startFlags, ProfilerInfo profilerInfo, Bundle options) throws RemoteException {
         ...
         data.writeStrongBinder(resultTo);
         data.writeString(resultWho);
@@ -83,10 +87,13 @@ public int startActivity(IApplicationThread caller, String callingPackage, Inten
 4. ActivityManagerService得到我们用Parcelable封装的data后就通过mStackSupervisor（activity栈管理器）会调用startActivityMayWait方法为Launcher启动Activity做准备
 ```
 @Override
-public final int startActivityAsUser(IApplicationThread caller, String callingPackage, Intent intent, String resolvedType, IBinder resultTo, String resultWho, int requestCode, int startFlags, ProfilerInfo profilerInfo, Bundle options, int userId) {
+public final int startActivityAsUser(IApplicationThread caller, String callingPackage, Intent intent, String resolvedType, 
+    IBinder resultTo, String resultWho, int requestCode, int startFlags, ProfilerInfo profilerInfo, Bundle options, int userId) {
+    
     enforceNotIsolatedCaller("startActivity");
     userId = handleIncomingUser(Binder.getCallingPid(), Binder.getCallingUid(), userId, false, ALLOW_FULL_ONLY, "startActivity", null);
-    return mStackSupervisor.startActivityMayWait(caller, -1, callingPackage, intent, resolvedType, null, null, resultTo, resultWho, requestCode, startFlags,profilerInfo, null, null, options, false, userId, null, null);
+    return mStackSupervisor.startActivityMayWait(caller, -1, callingPackage, intent, resolvedType, null, null, resultTo, resultWho, 
+        requestCode, startFlags,profilerInfo, null, null, options, false, userId, null, null);
 }
 ```
 
@@ -120,7 +127,9 @@ void startSpecificActivityLocked(ActivityRecord r,boolean andResume, boolean che
 
 6. ActivityManagerService 创建进程，并生成ActivityThread。
 ```
-final ProcessRecord startProcessLocked(String processName, ApplicationInfo info, boolean knownToBeDead, int intentFlags, String hostingType, ComponentName hostingName,boolean allowWhileBooting, boolean isolated, int isolatedUid, boolean keepIfLarge,String abiOverride, String entryPoint, String[] entryPointArgs, Runnable crashHandler) {
+final ProcessRecord startProcessLocked(String processName, ApplicationInfo info, boolean knownToBeDead, 
+    int intentFlags, String hostingType, ComponentName hostingName,boolean allowWhileBooting, boolean isolated,
+    int isolatedUid, boolean keepIfLarge,String abiOverride, String entryPoint, String[] entryPointArgs, Runnable crashHandler) {
     ProcessRecord app;
     if (!isolated) {
         app = getProcessRecordLocked(processName, info.uid, keepIfLarge);
@@ -148,7 +157,8 @@ final ProcessRecord startProcessLocked(String processName, ApplicationInfo info,
     return (app.pid != 0) ? app : null;
 }
 // 开启进程，并创建ActivityThread
-private final void startProcessLocked(ProcessRecord app, String hostingType,String hostingNameStr, String abiOverride, String entryPoint, String[] entryPointArgs) {
+private final void startProcessLocked(ProcessRecord app, String hostingType,String hostingNameStr,
+     String abiOverride, String entryPoint, String[] entryPointArgs) {
     long startTime = SystemClock.elapsedRealtime();
     if (app.pid > 0 && app.pid != MY_PID) {
         checkTime(startTime, "startProcess: removing from pids map");
@@ -168,7 +178,8 @@ private final void startProcessLocked(ProcessRecord app, String hostingType,Stri
     if (entryPoint == null) entryPoint = "android.app.ActivityThread";
     checkTime(startTime, "startProcess: asking zygote to start proc");
     // Process.start方法创建应用进程是通过 Zygote 进程完成的，设置好参数和创建选项后通过zygoteState.writer将数据交给Zygote进程，它会调用fork()创建进程。
-    Process.ProcessStartResult startResult = Process.start(entryPoint,app.processName, uid, uid, gids, debugFlags, mountExternal,app.info.targetSdkVersion, app.info.seinfo, requiredAbi, instructionSet,app.info.dataDir, entryPointArgs);
+    Process.ProcessStartResult startResult = Process.start(entryPoint,app.processName, uid, uid, gids, 
+        debugFlags, mountExternal,app.info.targetSdkVersion, app.info.seinfo, requiredAbi, instructionSet,app.info.dataDir, entryPointArgs);
 }
 ```
 
@@ -216,7 +227,10 @@ private final boolean attachApplicationLocked(IApplicationThread thread, int pid
 
     // 调用ActivityThread的bindApplication方法
     try {
-        thread.bindApplication(processName, appInfo, providers, app.instrumentationClass,profilerInfo, app.instrumentationArguments, app.instrumentationWatcher,app.instrumentationUiAutomationConnection, testMode, enableOpenGlTrace,isRestrictedBackupMode || !normalMode, app.persistent,new Configuration(mConfiguration), app.compat,getCommonServicesLocked(app.isolated),mCoreSettingsObserver.getCoreSettingsLocked());
+        thread.bindApplication(processName, appInfo, providers, app.instrumentationClass,profilerInfo, 
+            app.instrumentationArguments, app.instrumentationWatcher,app.instrumentationUiAutomationConnection, 
+            testMode, enableOpenGlTrace,isRestrictedBackupMode || !normalMode, app.persistent,new Configuration(mConfiguration),
+            app.compat,getCommonServicesLocked(app.isolated),mCoreSettingsObserver.getCoreSettingsLocked());
         updateLruProcessLocked(app, false, null);
         app.lastRequestedGc = app.lastLowMemory = SystemClock.uptimeMillis();
     }
@@ -270,8 +284,10 @@ private void handleBindApplication(AppBindData data) {
 
 9. ActivityThread调用performLaunchActivity出发目标Activity的onCreate、onStart，调用handleResumeActivity使目标Activity进入resume状态。
 ```
-// ActivityStackSupervisor的attachApplicationLocked该方法遍历mActivityDisplays列表得到当前所有ActivityStack，然后取得前台ActivityStack栈顶的ActivityRecord，不为空则启动该对该ActivityRecord调用realStartActivityLocked方法。
-// 进入到realStartActivityLocked方法，进行一些前期处理后调用ActivityThread的scheduleLaunchActivity方法，将创建ActivityClientRecord存储我们传入的各种应用相关的数据，通过Handler机制发送。当Handler接收到LAUNCH_ACTIVITY类型的消息时，执行handleLaunchActivity方法。
+// ActivityStackSupervisor的attachApplicationLocked该方法遍历mActivityDisplays列表得到当前所有ActivityStack，
+// 然后取得前台ActivityStack栈顶的ActivityRecord，不为空则启动该对该ActivityRecord调用realStartActivityLocked方法。
+// 进入到realStartActivityLocked方法，进行一些前期处理后调用ActivityThread的scheduleLaunchActivity方法，
+// 将创建ActivityClientRecord存储我们传入的各种应用相关的数据，通过Handler机制发送。当Handler接收到LAUNCH_ACTIVITY类型的消息时，执行handleLaunchActivity方法。
 boolean attachApplicationLocked(ProcessRecord app) throws RemoteException {
     final String processName = app.processName;
     boolean didSomething = false;

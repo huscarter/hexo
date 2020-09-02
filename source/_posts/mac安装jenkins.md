@@ -13,23 +13,23 @@ description: jenkins自动部署搞起。
 3. Android
 4. 安装brew
 5. 安装fir-cli
-- 安装ruby的工具rvm
+5.1 安装ruby的工具rvm
 ```
 curl -L https://get.rvm.io | bash -s stable
 ```
-- 查看可用ruby版本
+5.2 查看可用ruby版本
 ```
 rvm list known
 ```
-- ruby安装
+5.3 ruby安装
 ```
 rvm install 2.4.0
 ```
-- 查看已安装版本(标志安装成功)
+5.4 查看已安装版本(标志安装成功)
 ```
 ruby -v
 ```
-- 安装fir-cli
+5.5 安装fir-cli
 ```
 sudo gem install -n /usr/local/bin fir-cli
 ```

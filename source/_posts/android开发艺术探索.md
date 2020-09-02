@@ -11,41 +11,36 @@ description: 《android开发艺术探索》是一本针对有一定android基�
 
 ### activity的生命周期
 1. 典型情况
-    onCreate -> (onRestart ->)onStart(界面可见不可操作) -> onResume(可操作) -> running -> onPause -> onStop(不可见,当采用透明主题时不调用) -> onDestroy
+onCreate -> (onRestart ->)onStart(界面可见不可操作) -> onResume(可操作) -> running -> onPause -> onStop(不可见,当采用透明主题时不调用) -> onDestroy
+
 2. 异常情况
-    - 系统配置发生变化（屏幕旋转）
-    可以配置android:configChanges="orientation|screenSize"来避免重走生命周期，screenSize在api13之后屏幕旋转会导致activity重启。
-    - 内存不足（后台activity被杀死）
-    如果一个进程中没有四大组件，该进程将很快会被系统杀死，所以一些耗时操作最好时放在service中进行。
+2.1 系统配置发生变化（屏幕旋转）
+可以配置android:configChanges="orientation|screenSize"来避免重走生命周期，screenSize在api13之后屏幕旋转会导致activity重启。
+2.1  内存不足（后台activity被杀死）
+如果一个进程中没有四大组件，该进程将很快会被系统杀死，所以一些耗时操作最好时放在service中进行。
 
 ### activity的启动模式
 1. launch model
-    - standard
-    - singleTop
-    - singleTask
-    - singleInstance 总是单独的任务栈
+1.1 standard
+1.2 singleTop
+1.3 singleTask
+1.4 singleInstance 总是单独的任务栈
     
 2. activity的flag
-    - Intent.FLAG_ACTIVITY_CLEAR_TOP
-    - Intent.FLAG_ACTIVITY_NEW_TASK
-    - Intent.FLAG_ACTIVITY_SINGLE_TOP
-    - Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS 用户不能通过历史栈回到此activity
-    
+2.1 Intent.FLAG_ACTIVITY_CLEAR_TOP
+2.2 Intent.FLAG_ACTIVITY_NEW_TASK
+2.3 Intent.FLAG_ACTIVITY_SINGLE_TOP
+2.4 Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS 用户不能通过历史栈回到此activity    
 可以通过配置android:taskAffinity="xxx.xxx.xxx"来设置activity的任务栈，默认为包名。
 
 3. IntentFilter
-    - action
-    intent中的action要有一个和filter规则中定义的匹配就ok。
-    
-    - category
-    intent中的所有category都需要和filter规则中定义的匹配才ok
-    
-    - data
-    和action一样。系统默认的data其uri的scheme为content、file。
-    
-action、category和data如果都定义了，那么intent中也必须要将其三个都匹配才行。
-    
-    
+3.1 action
+intent中的action要有一个和filter规则中定义的匹配就ok。
+3.2 category
+intent中的所有category都需要和filter规则中定义的匹配才ok
+3.3 data
+和action一样。系统默认的data其uri的scheme为content、file。
+3.4 action、category和data如果都定义了，那么intent中也必须要将其三个都匹配才行。
 
 ## 二、IPC
 
@@ -153,9 +148,9 @@ RemoteViews只支持有限的View，不支持findViewById，使用一系列set�
 drawable表示的是一种可以在canvas上进行绘制的概念，可以是图片和颜色。
 
 1. BitmapDrawable
-    - android:antialias 抗锯齿
-    - android:dither 抖动效果
-    - android:tileMode 平铺模式
+1.1 android:antialias 抗锯齿
+1.2 android:dither 抖动效果
+1.3 android:tileMode 平铺模式
 
 2. ShapeDrawable
 
@@ -174,7 +169,6 @@ drawable表示的是一种可以在canvas上进行绘制的概念，可以是图
 9. ClipDrawable 可以根据当前等级裁剪另一个Drawable
 
 10. 自定义Drawable很少用到，因为不能直接在XML中使用
-
 
 ## 七、Android动画深入分析
 
@@ -195,19 +189,18 @@ drawable表示的是一种可以在canvas上进行绘制的概念，可以是图
 1. 常用的几个类为ObjectAnimation、ValueAnimation和AnimationSet
 
 2. 差值器（TimeInterpolator）和估值器（TypeEvaluator）
-    - 差值器根据时间流失的百分比来计算出当前属性值改变的百分比。
-    - 估值器根据属性改变的百分比计算改变后的属性值。
+2.1 差值器根据时间流失的百分比来计算出当前属性值改变的百分比。
+2.2 估值器根据属性改变的百分比计算改变后的属性值。
     
 3. 属性动画的原理，该对象必须提供属性的get和set方法，动画在looper中执行通过反射调用属性的get和set方法设置属性值。
 
 4. 使用动画的注意事项
-
-    - 帧动画注意OOM
-    - 内存泄漏，一般是属性动画中的无限循环动画
-    - 兼容性问题，属性动画android 3.0（api 11）才支持的
-    - 不要使用px，尽量都使用dp
-    - 动画元素的交互，view动画的事件是保留在原来的位置，属性动画的事件位置则随view改变和改变
-    - 硬件加速推荐使用，android4.0（api 14）默认开启
+4.1 帧动画注意OOM
+4.2 内存泄漏，一般是属性动画中的无限循环动画
+4.3 兼容性问题，属性动画android 3.0（api 11）才支持的
+4.4 不要使用px，尽量都使用dp
+4.5 动画元素的交互，view动画的事件是保留在原来的位置，属性动画的事件位置则随view改变和改变
+4.6 硬件加速推荐使用，android4.0（api 14）默认开启
     
 ## 八、理解Window和WindowManager
 在android中所有的视图都是通过Window来呈现的，包括Activity、Dialog和Toast。Window是一个抽象类，具体实现是PhoneWindow；
@@ -215,15 +208,15 @@ WindowManager用于管理Window的创建和销毁。
 
 ### Window和WindowManager
 1. WindowManager.LayoutParams 的flag属性
-    - FLAG_NOT_FOCUSABLE(window不需要获取焦点)
-    - FLAG_NOT_TOUCH_MODAL (window区域内的点击事件自己处理，区域外的交由底层window处理)
-    - FLAG_SHOW_WHEN_CLOCKED（window可以显示在锁屏上）
+1.1 FLAG_NOT_FOCUSABLE(window不需要获取焦点)
+1.2 FLAG_NOT_TOUCH_MODAL (window区域内的点击事件自己处理，区域外的交由底层window处理)
+1.3 FLAG_SHOW_WHEN_CLOCKED（window可以显示在锁屏上）
     
 
 2. WindowManager.LayoutParams 的type属性
-    - 应用级window（1-99）
-    - 子window（1000-1999）
-    - 系统级window（2000-2999）定义系统级别的window需要申请user-permission
+2.1 应用级window（1-99）
+2.2 子window（1000-1999）
+2.3 系统级window（2000-2999）定义系统级别的window需要申请user-permission
     
 3. WindowManager操控Window是通过添加、删除和更新Window里的view是显现。
 
@@ -378,11 +371,14 @@ LruCache是android3.1提供的缓存类，兼容早起版本可以使用support-
 ### Android性能优化
 #### 布局优化
 1. include标签
-- 可以重用布局，配合merge可以减少布局层级。
+1.1 可以重用布局，配合merge可以减少布局层级。
+
 2. merge标签
-- 可以减少布局层级。
+2.1 可以减少布局层级。
+
 3. ViewStub 按需加载
-- 因为ViewStub高宽都是0，所以不会参与布局。通过调用setVisible和inflate后被layout指定的布局替换；它能提高页面初始布局效率，在网络出错的业务场景中比较好用。
+3.1 因为ViewStub高宽都是0，所以不会参与布局。通过调用setVisible和inflate后被layout指定的布局替换；它能提高页面初始布局效率，在网络出错的业务场景中比较好用。
+
 4. 线性布局优于相对布局
 
 #### 绘制优化
@@ -401,9 +397,9 @@ LruCache是android3.1提供的缓存类，兼容早起版本可以使用support-
 #### ListView和Bitmap优化
 1. 避免在getView中做耗时操作
 2. 根据滑动状态来控制任务的执行频率
-- 使用inSampleSize缩放图片
-- android3.0以后可以使用inBitmap复用图片内存
-- 使用图片缓存
+2.1 使用inSampleSize缩放图片
+2.2 android3.0以后可以使用inBitmap复用图片内存
+2.3 使用图片缓存
 
 #### 线程优化
 1. 线程池可以重用线程避免创建和销毁的开销

@@ -44,32 +44,26 @@ multidex功能，支持build.gradle的配置开关。
 #### 运行加载过程
 
 1. AtlasBridgeApplication.attachBaseContext
-
-    - 反射并构造BridgeApplicationDelegate的实例
-    - 执行BridgeApplicationDelegate的attachBaseContext方法
+1.1 反射并构造BridgeApplicationDelegate的实例
+1.2 执行BridgeApplicationDelegate的attachBaseContext方法
 
 2. BridgeApplicationDelegate. attachBaseContext
-
-    - hook之前的准备工作
-    - 回调预留接口
-    - 初始化atlas
-    - 处理provider
+2.1 hook之前的准备工作
+2.2 回调预留接口
+2.3 初始化atlas
+2.4 处理provider
 
 3. AtlasHacks.defineAndVerify
-
-    - 动态加载class
-    - 动态加载资源
-    - 处理四大组件 能够让动态代码中的四大组件在Android上正常跑起来。
+3.1 动态加载class
+3.2 动态加载资源
+3.3 处理四大组件 能够让动态代码中的四大组件在Android上正常跑起来。
 
 4. 回调预留接口
-
-    - BridgeApplicationDelegate#attachBaseContext()方法里回调build.gradle中配置的方法。
+4.1 BridgeApplicationDelegate#attachBaseContext()方法里回调build.gradle中配置的方法。
 
 5. atlas.init
-    - 首先是读取manifest中的配置数据multidexEnable和mRealApplicationName，这两个数据也是在编译期由atlas插件写到manifest中的。
-    - 对系统关键节点进行了hook。
-
-
+5.1 首先是读取manifest中的配置数据multidexEnable和mRealApplicationName，这两个数据也是在编译期由atlas插件写到manifest中的。
+5.2 对系统关键节点进行了hook。
 
 ## 文档
 1. [官方文档](https://alibaba.github.io/atlas/)
