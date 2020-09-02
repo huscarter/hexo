@@ -376,32 +376,38 @@ LruCache是android3.1提供的缓存类，兼容早起版本可以使用support-
 ## 15、Android的性能优化
 
 ### Android性能优化
-1. 布局优化
-    - include标签
-    - merge标签
-    - ViewStub 按需加载
-    - 线性布局由于相对布局
-2. 绘制优化
-    - onDraw方法不要创建新对象
-    - onDraw方法不要做耗时任务
-3. 内存泄漏优化
-    - 静态变量引用
-    - 单利模式
-    - android无限循环动画
-4. 响应速度优化和ANR分析
-    - Activity 5s
-    - BroadcastReceiver 10s
-    - service 20s
-5. ListView和Bitmap优化
-    - 避免在getView中做耗时操作
-    - 根据滑动状态来控制任务的执行频率
-    
-    - 使用inSampleSize缩放图片
-    - android3.0以后可以使用inBitmap复用图片内存
-    - 使用图片缓存
-6. 线程优化
-    - 线程池可以重用线程避免创建和销毁的开销
-    - 避免抢占CPU导致堵塞
+#### 布局优化
+1. include标签
+- 可以重用布局，配合merge可以减少布局层级。
+2. merge标签
+- 可以减少布局层级。
+3. ViewStub 按需加载
+- 因为ViewStub高宽都是0，所以不会参与布局。通过调用setVisible和inflate后被layout指定的布局替换；它能提高页面初始布局效率，在网络出错的业务场景中比较好用。
+4. 线性布局优于相对布局
+
+#### 绘制优化
+1. onDraw方法不要创建新对象
+2. onDraw方法不要做耗时任务
+
+#### 内存泄漏优化
+1. 静态变量引用
+2. 单利模式
+3. android无限循环动画
+#### 响应速度优化和ANR分析
+1. Activity 5s
+2. BroadcastReceiver 10s
+3. service 20s
+
+#### ListView和Bitmap优化
+1. 避免在getView中做耗时操作
+2. 根据滑动状态来控制任务的执行频率
+- 使用inSampleSize缩放图片
+- android3.0以后可以使用inBitmap复用图片内存
+- 使用图片缓存
+
+#### 线程优化
+1. 线程池可以重用线程避免创建和销毁的开销
+2. 避免抢占CPU导致堵塞
     
 
 

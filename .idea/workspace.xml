@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/source/_posts/常用算法整理.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/常用算法整理/算法复杂度.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/数据结构整理/ArrayMap的缓存模型.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/移动开发工具介绍.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/android知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android知识梳理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/java位运算.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/java位运算.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/android开发艺术探索.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android开发艺术探索.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/数据结构整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/数据结构整理.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,22 +33,24 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_posts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_posts/常用算法整理" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/数据结构整理" />
+      <recent name="$PROJECT_DIR$/source/_posts/常用算法整理" />
       <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$/source/_posts/backup" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/常用算法整理" />
       <recent name="$PROJECT_DIR$/source/_posts" />
       <recent name="$PROJECT_DIR$/source/_posts/android知识梳理" />
       <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$/backup" />
-      <recent name="$PROJECT_DIR$/source/_posts/android开发艺术探索" />
     </key>
   </component>
   <component name="RunDashboard">
