@@ -2,34 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/source/_posts/OkHttp知识梳理.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/RecyclerView知识梳理.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/android知识思维导图/android知识思维导图.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/maupassant/source/img/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/android发布到nexus私服.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android发布到nexus私服.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/android开发艺术探索.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android开发艺术探索.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/android架构梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android知识思维导图.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/android的启动.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android的启动.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/android知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android知识梳理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/android项目开发规范.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/android项目开发规范.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/atlas框架使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/atlas框架使用.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter技术介绍.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter技术介绍.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter接入友盟社会化分享.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter接入友盟社会化分享.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter自绘圆角矩形进度条.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter自绘圆角矩形进度条.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter通过jenkins自动化打包.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter通过jenkins自动化打包.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter问题记录.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter问题记录.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/github搭建自己的博客.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/github搭建自己的博客.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/git操作命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/git操作命令.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/java虚拟机.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/java虚拟机.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/kotlin语法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/kotlin语法.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/mac安装jenkins.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/mac安装jenkins.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/mac系统搭建nexus私服.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/mac系统搭建nexus私服.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/swift知识整理.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/swift语法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/swift语法.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/三星i9500移动网络不可用.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/三星i9500移动网络不可用.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/创建JEE项目.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/创建JEE项目.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/数据结构整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/数据结构整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/移动开发工具介绍.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/移动开发工具介绍.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/设计模式整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/设计模式整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/读书计划.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/读书计划.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/高效能人士的七个习惯读后感.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/高效能人士的七个习惯读后感.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/设计模式整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/常用设计模式整理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/maupassant" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/maupassant/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/head.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +26,8 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1Zqnt1KFdSYcQnL3Ynw0UooYPSW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -54,24 +38,25 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_posts/常用算法整理" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_posts" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/maupassant/source" />
       <recent name="$PROJECT_DIR$/source/_posts/数据结构整理" />
       <recent name="$PROJECT_DIR$/source/_posts/常用算法整理" />
       <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$/source/_posts/backup" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/source/_posts/常用算法整理" />
       <recent name="$PROJECT_DIR$/source/_posts" />
-      <recent name="$PROJECT_DIR$/source/_posts/android知识梳理" />
-      <recent name="$PROJECT_DIR$/source" />
-      <recent name="$PROJECT_DIR$/backup" />
+      <recent name="$PROJECT_DIR$/themes/maupassant/source/img" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/themes/maupassant" />
+      <recent name="$PROJECT_DIR$/image" />
     </key>
   </component>
   <component name="RunDashboard">

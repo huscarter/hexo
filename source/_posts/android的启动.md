@@ -322,9 +322,9 @@ boolean attachApplicationLocked(ProcessRecord app) throws RemoteException {
 }
 ```
 
-PS:
-[参考](https://blog.csdn.net/mysimplelove/article/details/93722772)
-[参考](https://blog.csdn.net/lu1024188315/article/details/75722420)
-[参考](https://www.jianshu.com/p/ab9b83a77af6)
+参考:
+[apk的启动](https://blog.csdn.net/mysimplelove/article/details/93722772)
+[android线程管理](https://blog.csdn.net/lu1024188315/article/details/75722420)
+[Zygote进程的启动](https://www.jianshu.com/p/ab9b83a77af6)
 
 
