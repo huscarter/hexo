@@ -81,8 +81,8 @@ flutter的github地址。
 3.2 通过 EventChannel来实现（原生到flutter传递，无返回值）
 3.4 通过 MethodChannel（双向传递，有返回值，普遍用于方法调用）
 3.4.1 flutter -> android
-    - 注册 MessageChange("channelName")，调用 setMethodCallHandler 设置回调接收。
-    - 调用 MessageChange.invokeMethod("methodName","params") 发送消息，
+    - 注册 MethodChannel("channelName")，调用 setMethodCallHandler 设置回调接收。
+    - 调用 MethodChannel.invokeMethod("methodName","params") 发送消息，
     - channel.invokeMethod底层是调用了ui.window.sendPlatformMessage(channel, message, (ByteData reply)
     - window.sendPlatformMessage 内部调用了native方法 Window_sendPlatformMessage 将消息发送业务交给了C++层。
 3.4.2 android -> flutter

@@ -11,16 +11,42 @@ java的线程安全绝大多是都涉及JUC（java.util.concurrent）下面的�
 ## JUC部分
 
 ### 锁（Lock）
+#### 对象结构
+1、对象头
+1.1 Mark Word
+    - HashCode
+    - 锁标志位
+    - GC分代
+    - 偏向线程ID
+    
+1.2 类型指针
 
-#### Synchronized
+2、实例数据
 
-#### ReentrantLock
+3、对齐补充
 
-#### ReadWriteLock
+#### 乐观锁
+认为碰到并发写可能性低，每次拿数据不会上锁；但再更新会比较当前版本号和上一次版本号是否一致，否则重复读取-比较过程。
+1. 偏向锁
 
-#### ReentrantReadWriteLock
+2. 轻量级锁（自旋锁、自适应自旋锁）
+2.1 CAS
+2.2 Volatile
 
-#### volatile
+#### 悲观锁
+遇到并发写的可能性高，每次去拿数据的时候都认为别人会修改。
+1. Synchronized
+
+2. ReentrantLock
+
+3. ReadWriteLock
+
+4.  ReentrantReadWriteLock
+
+#### 锁的工具类
+1. CycleBarrier
+
+2. CountDownLatch
 
 ### Atomic
 
@@ -75,6 +101,5 @@ java的线程安全绝大多是都涉及JUC（java.util.concurrent）下面的�
 
 #### SingleThreadPool
 
-### CAS
 
 
