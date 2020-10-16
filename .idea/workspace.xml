@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/source/_posts/ARoute知识梳理.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/_posts/fresco知识梳理.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/_posts/glide知识梳理.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/maupassant/source/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/es6常用方法.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/vue使用梳理.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/weex知识梳理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OkHttp知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OkHttp知识梳理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/flutter知识整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/java线程知识整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/java线程知识整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/常用设计模式整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/常用设计模式整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/数据结构整理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/数据结构整理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/maupassant/layout/_partial/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/layout/_partial/head.pug" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +23,13 @@
   </component>
   <component name="ProjectId" id="1Zqnt1KFdSYcQnL3Ynw0UooYPSW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/weiwhite/workspace/hexo/source/_posts/android知识梳理.md" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/db.json" />
@@ -41,17 +38,10 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_posts" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/themes/maupassant/source" />
-      <recent name="$PROJECT_DIR$/source/_posts/数据结构整理" />
-      <recent name="$PROJECT_DIR$/source/_posts/常用算法整理" />
-      <recent name="$PROJECT_DIR$/source" />
-      <recent name="$PROJECT_DIR$/source/_posts/backup" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/source/_posts" />
       <recent name="$PROJECT_DIR$/themes/maupassant/source/img" />
@@ -59,20 +49,21 @@
       <recent name="$PROJECT_DIR$/themes/maupassant" />
       <recent name="$PROJECT_DIR$/image" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/maupassant/source" />
+      <recent name="$PROJECT_DIR$/source/_posts/数据结构整理" />
+      <recent name="$PROJECT_DIR$/source/_posts/常用算法整理" />
+      <recent name="$PROJECT_DIR$/source" />
+      <recent name="$PROJECT_DIR$/source/_posts/backup" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -189,19 +180,13 @@
         <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1558346666402" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <option name="filePath" />
       <option name="vmParameters" />
       <option name="alternativeJrePath" />
@@ -367,6 +352,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/themes/maupassant" />
+    </ignored-roots>
     <MESSAGE value="添加github markdown示例" />
     <MESSAGE value="添加j2ee博文" />
     <MESSAGE value="添加nexus博客" />
@@ -375,5 +363,19 @@
     <MESSAGE value="android知识梳理" />
     <MESSAGE value="android知识梳理&#10;android开发规范&#10;C++学习笔记" />
     <option name="LAST_COMMIT_MESSAGE" value="android知识梳理&#10;android开发规范&#10;C++学习笔记" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="162" key="#Notifications" timestamp="1602234191951">
+      <screen x="0" y="23" width="1680" height="947" />
+    </state>
+    <state x="440" y="162" key="#Notifications/0.23.1680.947@0.23.1680.947" timestamp="1602234191951" />
+    <state x="542" y="307" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602227428147">
+      <screen x="0" y="23" width="1680" height="947" />
+    </state>
+    <state x="542" y="307" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.947@0.23.1680.947" timestamp="1602227428147" />
+    <state x="589" y="159" key="SettingsEditor" timestamp="1602230329522">
+      <screen x="0" y="23" width="1680" height="947" />
+    </state>
+    <state x="589" y="159" key="SettingsEditor/0.23.1680.947@0.23.1680.947" timestamp="1602230329522" />
   </component>
 </project>
