@@ -4,7 +4,7 @@ date: 2013-07-23 01:01:01
 categories: 技术周边
 tags: 
     - 技术周边
-description: mac疑难杂症整理
+description: 记录使用mac开发过程中遇到的各种问题，包括系统的、cli的以及其他一些第三方。
 ---
 
 ## nod.js

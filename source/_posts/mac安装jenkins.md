@@ -1,7 +1,7 @@
 ---
 title: mac安装jenkins流程
 date: 2019-10-31 09:29:44
-categories: jenkins
+categories: CI
 tags:
      - jenkins
 description: jenkins自动部署搞起。
