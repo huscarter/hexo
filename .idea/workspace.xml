@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/es6常用方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/es6常用方法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/vue使用梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/vue使用梳理.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/weex知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/weex知识梳理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/maupassant" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

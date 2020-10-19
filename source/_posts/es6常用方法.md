@@ -3,7 +3,7 @@ title: es6常用方法
 date: 2020-10-16 09:29:44
 categories: web
 tags:
-     - web
+     - es
 description: 总结了es6的常用方法。
 ---
 

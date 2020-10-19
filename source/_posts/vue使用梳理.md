@@ -307,10 +307,11 @@ npm run dev
 2、methods中的方法会进行多次调用，浪费资源。
 ```
 
-### [es6常用语法](web/es6常用语法)
+### es6方法
+[es6常用方法](/web/es6常用方法)
 
 PS: 参考
-[Vue语法](https://blog.csdn.net/ChristWTF/article/details/104256469)
+[Vue语法|菜鸟教学](https://www.runoob.com/vue2/vue-template-syntax.html)
 
 
 
