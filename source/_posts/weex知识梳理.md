@@ -179,7 +179,7 @@ public class WXActivity extends AppCompatActivity implements IWXRenderListener {
 ```
 
 5. Android设置weex调用的module
-5.1 创建Android端module
+   5.1 创建Android端module
 ```
 public class WXNavigator extends WXModule {
     /**
@@ -191,17 +191,17 @@ public class WXNavigator extends WXModule {
 }
 ```
 
-6.2 注册module
+   5.2 注册module
 ```
 WXSDKEngine.registerModule("moduleName",WXNavigator.class);
 ```
 
-7. Android设置weex调用的component
+6. Android设置weex调用的component
 ```
 同module设置，调用api改为component
 ```
 
-8. weex端使用modlue
+7. weex端使用modlue
 ```
 // 引入
 const native = _.weexRequire('@weex-module/moduleName')

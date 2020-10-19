@@ -84,12 +84,12 @@ npm run dev
 ```
 
 7. v-bind（:）（动态绑定属性）
-7.1 简单绑定
+   7.1 简单绑定
 ```
 //v-bind表明src属性是动态绑定的，于是就会在data中寻找对应的值
 <img v-bind:src="url">
 ```
-7.2 对象绑定
+   7.2 对象绑定
 ```
 <div v-bind:class="{active:isActive,text-danger:hasError}"></div>
 <button v-on:click="btnClick">按钮</button>
@@ -109,7 +109,7 @@ npm run dev
   })
 </script>
 ```
-7.3 数组绑定
+   7.3 数组绑定
 ```
 <div v-bind:class="[class1,class2]"></div>
 //<div v-bind:class="['class1','class2']"></div>
@@ -124,7 +124,7 @@ npm run dev
   })
 </script>
 ```
-7.4 style对象绑定
+   7.4 style对象绑定
 ```
 <div v-bind:style="{fontSize:finalSize + 'px', color:finalColor}"></div>
 //有''表示为字符串，无''表示变量
@@ -139,7 +139,7 @@ npm run dev
   })
 </script>
 ```
-7.5 style数组绑定
+   7.5 style数组绑定
 ```
 <div v-bind:style="[baseStyle,base]"></div>
 <script>
@@ -153,9 +153,8 @@ npm run dev
 </script>
 ```
 
-
 8. v-on（@）（监听事件）
-8.1 参数传递
+   8.1 参数传递
 ```
 //方法没有形参时 加不加()都一样
 <button @click="btn1()">按钮</button>
@@ -189,7 +188,7 @@ npm run dev
   })
 </script>
 ```
-8.2 修饰符使用
+   8.2 修饰符使用
 ```
 //阻止冒泡''和""都可以
 <button @click.stop='btnClick'>按钮</button>

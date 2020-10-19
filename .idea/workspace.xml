@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="">
+    <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="android知识梳理&#10;android开发规范&#10;C++学习笔记">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/vue使用梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/vue使用梳理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/weex知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/weex知识梳理.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Zqnt1KFdSYcQnL3Ynw0UooYPSW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -373,6 +376,14 @@
       <screen x="0" y="23" width="1680" height="947" />
     </state>
     <state x="589" y="159" key="SettingsEditor/0.23.1680.947@0.23.1680.947" timestamp="1602230329522" />
+    <state x="620" y="420" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603073316172">
+      <screen x="0" y="23" width="1680" height="947" />
+    </state>
+    <state x="620" y="420" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.947@0.23.1680.947" timestamp="1603073316172" />
+    <state x="573" y="216" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603073284662">
+      <screen x="0" y="23" width="1680" height="947" />
+    </state>
+    <state x="573" y="216" key="git4idea.branch.GitSmartOperationDialog/0.23.1680.947@0.23.1680.947" timestamp="1603073284662" />
     <state x="599" y="295" key="git4idea.merge.GitMergeDialog" timestamp="1603072983156">
       <screen x="0" y="23" width="1680" height="947" />
     </state>
