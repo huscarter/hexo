@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303edb1c-5767-46ba-ad9f-0163c393f45b" name="Default" comment="android知识梳理&#10;android开发规范&#10;C++学习笔记">
-      <change afterPath="$PROJECT_DIR$/source/_posts/支付宝小程序知识梳理.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/支付宝小程序知识梳理.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/支付宝小程序知识梳理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/maupassant/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/maupassant/_config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
