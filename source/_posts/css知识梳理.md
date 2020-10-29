@@ -328,11 +328,29 @@ div p // 选择所有div下的p元素
 
 ### display
 
+```
+display: inline; // 组建以行内元素展示
+display: inline-block; // 组建以行内块元素展示
+display: block; // 组建以块级元素展示
+display: none; // 组建不展示
+```
+
 ### float
+
+```
+float: right; // 元素向右浮动，浮动的元素会将行内和块级元素向左移动
+float: left; // 元素向左浮动
+float: none; // 默认，元素不浮动
+clear: both; // 将左右两侧的浮动清除
+```
 
 ### flex
 
-### z-index
+让所有弹性盒模型对象的子元素按比例展示，且忽略它们内部的内容
+
+```
+flex:1; // 所有元素都有相同的长度
+```
 
 ## 参考
 
