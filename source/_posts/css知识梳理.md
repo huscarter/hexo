@@ -3,10 +3,13 @@ title: css知识梳理
 date: 2020-10-28 20:29:44
 categories: web
 tags: css
-description: 梳理的日常的css样式知识。css里面很多属性你如果不了解就去使用会让你丈二和尚不到到头脑，这blog整理了平时开发用的css和记录了可能使用出错的css，你值得拥有。
+description: 梳理的日常的css样式知识。
 ---
 
+css里面很多属性你如果不了解就去使用会让你丈二和尚不到到头脑，这blog整理了平时开发用的css样式以及记录了一些平时使用时易出错的css样式，你值得拥有。
+
 ## css的盒子模型
+
 首先我们需要了解css的盒子模型，以便知道其作用域和影响效果。因为在css中一个视图所包含的内容就是css盒子模型的内容。
 ![css盒子模型](css盒子模型.jpeg)
 
@@ -55,8 +58,6 @@ margin是外边距，当前组建border和父控件之间的间隔。margin 没�
    	border-bottom: 13px solid #eeeeee; // 设置下边框
    }
    ```
-
-   
 
 ### padding
 
@@ -351,6 +352,38 @@ clear: both; // 将左右两侧的浮动清除
 ```
 flex:1; // 所有元素都有相同的长度
 ```
+
+### align
+
+1. text-align
+
+   指定元素文本的水平对齐方式。
+
+   ```
+   text-align: auto; // 默认值：由浏览器决定。
+   text-align: left; // 把文本排列到左边。默认值：由浏览器决定
+   text-align: right; // 把文本排列到右边
+   text-align: center; // 把文本排列到中间
+   // 实现两端对齐文本效果。此效果只会在文本出现自动换行时确保两端对齐，而不会出现换行后有参差不齐的情况。
+   text-align: justify; 
+   ```
+
+2. vertical-align
+
+   指定元素的垂直对齐方式。要弄懂其效果需要先了解文本的中线、基线、顶线和底线。看图！
+
+   ![](文本5线.png)
+
+   ```
+   vertical-align: top; // 把元素的顶端与行中最高元素的顶端对齐
+   vertical-align: text-top; // 把元素的顶端与父元素字体的顶端对齐
+   vertical-align: bottom; // 使元素及其后代元素的底部与整行的底部对齐
+   vertical-align: text-bottom; // 
+   vertical-align: middle; // 把此元素放置在父元素的中部
+   vertical-align: baseline; // 把元素的底端与父元素字体的底端对齐
+   ```
+
+
 
 ## 参考
 
