@@ -46,7 +46,8 @@ git push origin -d feature/v1.0.0
 
 #### 拉取\切换分支
 ```
-git checkout v3.0.0
+git checkout v3.0.0 // 获取tag
+git checkout -b develop origin/develop //获取远端develop分支到本地，本地分支为develop
 ```
 
 #### 获取分支

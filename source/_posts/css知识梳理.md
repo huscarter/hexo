@@ -6,7 +6,7 @@ tags: css
 description: 梳理的日常的css样式知识。
 ---
 
-css里面很多属性你如果不了解就去使用会让你丈二和尚不到到头脑，这blog整理了平时开发用的css样式以及记录了一些平时使用时易出错的css样式，你值得拥有。
+css里面很多属性，你如果不了解就去使用会让你丈二和尚不到到头脑。这blog整理了平时开发用的css样式以及记录了一些使用时易出错的css样式，你值得拥有。
 
 ## css的盒子模型
 
@@ -327,15 +327,6 @@ div p // 选择所有div下的p元素
    box-sizing: content-box; // 元素的填充和边框布局和绘制指定宽度和高度除外（为 W3C 标准模型）
    ```
 
-### display
-
-```
-display: inline; // 组建以行内元素展示
-display: inline-block; // 组建以行内块元素展示
-display: block; // 组建以块级元素展示
-display: none; // 组建不展示
-```
-
 ### float
 
 ```
@@ -345,12 +336,58 @@ float: none; // 默认，元素不浮动
 clear: both; // 将左右两侧的浮动清除
 ```
 
-### flex
+### display
 
-让所有弹性盒模型对象的子元素按比例展示，且忽略它们内部的内容
+<font color="red">其中的display:flex常用于小程序的居中布局（小程序开发的小伙伴要注意），</font>当然需要配合flex的其他几个属性才能达到效果。
 
 ```
-flex:1; // 所有元素都有相同的长度
+display: inline; // 组建以行内元素展示
+display: inline-block; // 组建以行内块元素展示
+display: block; // 组建以块级元素展示
+display: none; // 组建不展示
+display: flex; // 弹性布局,设为flex布局以后，子元素的float、clear和vertical-align属性将失效
+```
+
+### flex
+
+1. flex
+
+   让所有弹性盒模型对象的子元素按比例展示，且忽略它们内部的内容大小。
+
+   ```
+   flex:1; // 所有元素都有相同的长度
+   ```
+
+2. <font color="red">flex-direction</font>
+
+   用来控制容器内内容排列方向，此属性需要搭配<font color="red">display:flex</font>才能起效果。
+
+   ```
+   flex-direction:row; // 沿水平主轴让元素从左向右排列
+   flex-direction:column; // 让元素沿垂直主轴从上到下垂直排列
+   ```
+
+3. <font color="red">flex-wrap</font>
+
+   用来控制容器内内容是否换行，此属性需要搭配<font color="red">display:flex</font>才能起效果。
+
+   ```
+   //  (默认)元素不换行,比如：一个div宽度100%，设置此属性，2个div宽度就自动变成各50%；
+   flex-wrap: nowrap; 
+   // 元素换行,比如：一个div宽度100%，设置此属性，第二个div就在第二行了；
+   flex-wrap: wrap; 
+   ```
+
+### <font color="red">justify-content</font>
+
+元素在主轴（页面）上的排列
+
+```
+justify-content: center; // 元素在主轴（页面）上居中排列
+justify-content: flex-start; // 元素在主轴（页面）上由左或者上开始排列
+justify-content: flex-end; // 元素在主轴（页面）上由右或者下开始排列
+justify-content: space-between; // 元素在主轴（页面）上左右两端或者上下两端开始排列
+justify-content: space-around; // 每个元素两侧的间隔相等。所以元素之间的间隔比元素与边框的间隔大一倍
 ```
 
 ### align
@@ -370,10 +407,12 @@ flex:1; // 所有元素都有相同的长度
 
 2. vertical-align
 
-   指定元素的垂直对齐方式。要弄懂其效果需要先了解文本的中线、基线、顶线和底线。看图！
+   指定元素的垂直对齐方式。要弄懂其效果需要先了解文本的中线、基线、顶线和底线。直接上2张图图！
 
    ![](文本5线.png)
 
+   ![](行框行内框.png)
+   
    ```
    vertical-align: top; // 把元素的顶端与行中最高元素的顶端对齐
    vertical-align: text-top; // 把元素的顶端与父元素字体的顶端对齐
@@ -388,4 +427,8 @@ flex:1; // 所有元素都有相同的长度
 ## 参考
 
 ### [runoob](https://www.runoob.com/cssref/css-reference.html)
+
+### [谈谈text-top、text-bottom](https://www.cnblogs.com/linfengtingyu1/p/3532709.html)
+
+
 
