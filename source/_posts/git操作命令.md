@@ -53,17 +53,32 @@ git checkout -b develop origin/develop //获取远端develop分支到本地，�
 #### 获取分支
 ```
 git clone git://github.com/schacon/grit.git [mygrit]
+git clone [-b mygrit] git://github.com/schacon/grit.git
 ```
 
 #### 提交代码到分支
 ```
 git status // 查看代码的修改状态
 git add . // 暂存所有提交的文件
+git restore --staged <file> // 放弃修改还原文件
+git rm --cached <file> // 删除已经add到暂存区的文件（不会物理删除的，只是变成未add的修改状态）
 git commit // 提交已暂存的文件
-git pull // 先同步代码到本地
+git pull // 先同步服务器最新代码到本地
 git push origin <本地分支名> // 再同步到服务器
 ```
 
+## 还原代码到指定版本
+1. 使用git revert（它是新增记录）
+```
+git revert -n <commit-id> // 将代码回退倒commit-id时的版本
+git commit -m "revert xx 版本" // 提交
+git push origin <branch> // 更新服务器版本，此时服务器会多出一条修改记录
+```
+2. 使用git reset（它会将HEAD移动到你reset的记录）
+```
+git reset --hand <commit-id> // 将本地代码回退到commit-id时的版本
+git push -f// 将远端仓库更新，此时HEAD版本变为commit-id；必须使用-f，因为你本地版本比远端的旧
+```
 
 ## tag操作
 1. 查看本地分支
