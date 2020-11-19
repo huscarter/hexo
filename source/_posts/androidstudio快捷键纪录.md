@@ -1,9 +1,9 @@
 ---
 title: AndroidStudio快捷键纪录
 date: 2013-03-09 10:29:44
-categories: 技术周边
+categories: android
 tags: 
-    - 技术周边
+    - 快捷键
 description: AndroidStudio快捷键纪录
 ---
 
