@@ -3,10 +3,10 @@ title: python知识梳理
 date: 2020-10-19 15:29:44
 categories: 脚本语言
 tags: python
-description: python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。
+description: python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。2020年1月1日，官方宣布python2停止更新，python2.7成为了pythond2的最后一个版本。
 ---
 
-因公司的weex项目使用python编写了shell脚本，为了后期维护因此学习了python。将其基础语法记录于此用于后期回顾。
+因公司的weex项目使用python编写了shell脚本，为了后期维护因此学习了python，将其基础语法记录于此用于后期回顾。
 
 ## python环境安装
 
@@ -78,19 +78,16 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
 1. 单下划线标识符_
 
    ```
-   _foo # _ 代表不能直接访问的类属性，不能用 from xxx import * 而导入
+   _foo # _ 代表不能直接访问的类属性(类似protected)，不能用 from xxx import * 而导入
    ```
 
 2. 双下划线标识符
 
    ```
-   __foo # 以双下划线开头代表类的私有属性
-   ```
-
-   ```
+   __foo # 以双下划线开头代表类的私有属性(类似private)
    __foo__ #	以双下划线开头和结尾的代表python里特殊的标识，比如 __init__()代表构造函数
    ```
-
+   
 3. 缩进（因为没有"{}"靠对称缩进管控代码）
 
    ```
@@ -114,7 +111,7 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
    				'Friday']
    ```
 
-5. 引号' '、" "、""" """
+5. 引号'' 、""、 """"""
 
    ```
    world0 = '这是一个属性' # 单引号
@@ -132,9 +129,204 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
    print("hello");print("world")
    ```
 
+8. 中文支持
+
+   python使用ASCII为默认编码格式，输出中文会报错，可以在文件头部添加下面的代码来解决。
+
+   ```
+   # coding=utf-8
+   # 或者
+   # -*- coding: UTF-8 -*-
+   ```
+
+9. 注释
+
+   ```
+   # 这是一个单行注释
+   
+   '''
+   这是一个多行注释
+   这是一个多行注释
+   '''
+   
+   """
+   这也是一个多行注释
+   这也是一个多行注释
+   """
+   ```
+
+   ### 标准数据类型
+
+   1. Number数字
+
+      1.1 int
+
+      ```
+      # 不需定义访问修饰符和类型
+      test0 = 1
+      test1 = -1
+      ```
+
+      1.2 long（长整型，可代码八进制和十六进制）
+
+      ```
+      test0 = 10241024L
+      test1 = -0x1928FTT
+      ```
+
+      1.3 float
+
+      ```
+      test0 = 1.2
+      test1 = -0.9
+      ```
+
+      1.4 complex（复数）
+
+      ```
+      test0 = 3e+26J
+      test1 = 3.14j
+      ```
+
+   2. String字符串
+
+      ```
+      test = "abcdefg"
+      print test[1:5] # bcdef
+      ```
+
+   3. List列表
+
+      ```
+      test = [1,2,"a","b","c","3"]
+      print test # [1,2,"a","b","c","3"]
+      print test[1:] # [2,"a","b","c","3"]
+      print test *2 # [1,2,"a","b","c","3",1,2,"a","b","c","3"]
+      print test + test # [1,2,"a","b","c","3",1,2,"a","b","c","3"]
+      ```
+
+   4. Tuple元组
+
+      元组可以说是不能二次赋值的数组
+
+      ```
+      test = (1,2,"a","b","c","3")
+      test[1] = 3 # 非法，元组不允许修改
+      print test # (1,2,"a","b","c","3")
+      print test[1:] # (2,"a","b","c","3")
+      print test *2 # (1,2,"a","b","c","3",1,2,"a","b","c","3")
+      print test + test # (1,2,"a","b","c","3",1,2,"a","b","c","3")
+      ```
+
+   5. Dictionary字典
+
+      同数组一样灵活，区别是字典通过键值对获取，列表通过下标获取。
+
+      ```
+      test = {"key0":"value0","key1":"value1","key1":"value1"}
+      print test["key0"] # value0
+      print test # {"key0":"value0","key1":"value1","key1":"value1"}
+      print test.keys # ["key0","key1","key2"]
+      print test.values # ["value0","value1","value"]
+      ```
+
+### 常用语句
+
+   1. 条件语句
+
+      1.1 if
+
+      ```
+      test = 1
+      if test == 0:
+      	print "等于0"
+      elif test == 1:
+      	print "等于1"
+      else:
+      	print "等于其他"
+      ```
+
+      1.2 <font color = "red">python不支持switch</font>
+
+   2. 循环语句
+
+      2.1 while
+
+      ```
+      test = 0
+      while test<10
+      	print "test 等于:",test
+       	test++
+      ```
+
+      2.2 for
+
+      ```
+      test = ["a","b","c"]
+      for w in test
+      	print "当前数组内容为:",w
+      	
+      for index in range(len(test))
+      	print "当前数组内容为:",test[index]
+      ```
+
+   3. pass 语句
+
+      ```
+      # 定义一个空方法，里面需要使用pass语句，否则会报错
+      def sample(test):
+          pass
+      ```
+
+### 面向对象编程
+   1. python 是一门面向对象语言，支持类的继承、方法重载。
+   2. <font color="red">类中的每个方法第一个参数必须是self。</font>
+   3. 子类重载的方法父类的该方法将不会再调用，如要调用子类可以通过super手动调用。
+   4. 通过from xxx import Xxx来引入一个类。
+   
+   father.py 文件
+   ```
+   # coding=utf-8
+
+   # Father 类
+   class Father(object):
+      def __init__(self,name,age,sex):
+         self.name = name
+         self.age = age
+         self.sex = sex
+
+      def show(self):
+         print "name: %s,age:%s, sex:%d" % (self.name,self.age,self.sex)
+   ```
+
+   son.py 文件
+   ```
+   # coding=utf-8
+   from father import Father
+
+   # Son 类
+   class User(Father):
+      def __init__(self,name,age,sex,score):
+         Father.__init__(self,name,age,sex)
+         self.score = score
+
+      def show(self):
+         super(self)
+         print "score:",self.score
+   ```
+
+   test.py文件
+   ```
+   #!/usr/bin/python
+   # coding=utf-8
+   from son import Son
+
+   son = Son("whh",29,1,90)
+   son.show()
+   ```
 
 
-
+   
 
 
 

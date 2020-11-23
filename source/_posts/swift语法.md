@@ -1,5 +1,5 @@
 ---
-title: dart语法
+title: swift语法
 date: 2020-01-28 20:18:44
 categories: ios
 tags:
@@ -7,7 +7,7 @@ tags:
 description: swift语法介绍。
 ---
 
-### 类型（dart一切皆为Object的子类，即便是int类型，默认值null）
+### 类型（swift一切皆为Object的子类，即便是int类型，默认值null）
 #### 一类
 1. Int
 2. UInt（无符号Int）
