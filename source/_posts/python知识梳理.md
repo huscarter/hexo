@@ -296,52 +296,50 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
    4. 通过from xxx import Xxx来引入一个类。
 
    5. <font color="red">如果建立了包目录，需要在包下建立__init__.py文件（可空）用来指明此目录为包目录</font>
+
+      father.py 文件
+
+      ```
+      # coding=utf-8
       
-      - father.py 文件
+      # Father 类
+      class Father(object):
+        def __init__(self,name,age,sex):
+          self.name = name
+          self.age = age
+          self.sex = sex
       
-        ```
-        # coding=utf-8
-        
-        # Father 类
-        class Father(object):
-          def __init__(self,name,age,sex):
-            self.name = name
-            self.age = age
-            self.sex = sex
-        
-          def show(self):
-          	print "name: %s,age:%s, sex:%d" % (self.name,self.age,self.sex)
-        ```
+        def show(self):
+        	print "name: %s,age:%s, sex:%d" % (self.name,self.age,self.sex)
+      ```
+
+      son.py 文件
+
+      ```
+      # coding=utf-8
+      from father import Father
       
-      - son.py 文件
+      # Son 类
+      class User(Father):
+        def __init__(self,name,age,sex,score):
+          Father.__init__(self,name,age,sex)
+          self.score = score
       
-        ```
-        # coding=utf-8
-        from father import Father
-        
-        # Son 类
-        class User(Father):
-          def __init__(self,name,age,sex,score):
-            Father.__init__(self,name,age,sex)
-            self.score = score
-        
-          def show(self):
-            super(self)
-            print "score:",self.score
-        ```
+        def show(self):
+          super(self)
+          print "score:",self.score
+      ```
+
+      test.py文件
+
+      ```
+      #!/usr/bin/python
+      # coding=utf-8
+      from son import Son
       
-        
-      
-      - test.py文件
-      
-        ```
-        #!/usr/bin/python
-        # coding=utf-8
-        from son import Son
-        
-        son = Son("whh",29,1,90)
-        son.show()
-        ```
+      son = Son("whh",29,1,90)
+      son.show()
+      ```
 
 
 
