@@ -412,9 +412,25 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
 ### import 第三方模块识别不了
 
 1. 原因
+
+   ```
+   """
+   import oss2 为例
+   你的系统中有python2和python3两个版本
+   可能你的项目ide使用的是python3，但是通过pip安装的oss库，而pip只为python2服务
+   """
+   ```
+
 2. 解决
 
+   ```
+   """
+   1. 可以将你的ide python版本更换为python2
+   2. 或者通过pip3 安装oss
+   """
+   ```
 
+   
 
 ## 参考
 [python官网文档](https://docs.python.org/zh-cn/3/)
