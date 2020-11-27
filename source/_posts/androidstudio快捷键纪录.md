@@ -4,7 +4,7 @@ date: 2013-03-09 10:29:44
 categories: android
 tags: 
     - 快捷键
-description: AndroidStudio快捷键纪录
+description: 防止自己头脑失灵，纪录一下AndroidStudio快捷键
 ---
 
 ## 查找

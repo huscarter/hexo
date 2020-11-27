@@ -155,7 +155,7 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
    """
    ```
 
-   ### 标准数据类型
+### 标准数据类型
 
    1. Number数字
 
@@ -237,6 +237,7 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
       1.1 if
 
       ```
+      # 单判断
       test = 1
       if test == 0:
       	print "等于0"
@@ -244,6 +245,13 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
       	print "等于1"
       else:
       	print "等于其他"
+      	
+      # 多判断
+      test = 1
+      if test >0 and test<3:
+      	print("0<test<3")
+      elif not test == 4:
+      	print("test not 4")
       ```
 
       1.2 <font color = "red">python不支持switch</font>
@@ -280,51 +288,137 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
 
 ### 面向对象编程
    1. python 是一门面向对象语言，支持类的继承、方法重载。
+
    2. <font color="red">类中的每个方法第一个参数必须是self。</font>
+
    3. 子类重载的方法父类的该方法将不会再调用，如要调用子类可以通过super手动调用。
+
    4. 通过from xxx import Xxx来引入一个类。
+
+   5. <font color="red">如果建立了包目录，需要在包下建立__init__.py文件（可空）用来指明此目录为包目录</font>
+      father.py 文件
+      
+      ```
+      # coding=utf-8
+      
+      # Father 类
+      class Father(object):
+        def __init__(self,name,age,sex):
+          self.name = name
+          self.age = age
+          self.sex = sex
+      
+        def show(self):
+        	print "name: %s,age:%s, sex:%d" % (self.name,self.age,self.sex)
+      ```
+      
+      son.py 文件
+      
+      ```
+      # coding=utf-8
+      from father import Father
+      
+      # Son 类
+      class User(Father):
+        def __init__(self,name,age,sex,score):
+          Father.__init__(self,name,age,sex)
+          self.score = score
+      
+        def show(self):
+          super(self)
+          print "score:",self.score
+      ```
+      
+      test.py文件
+      
+      ```
+      #!/usr/bin/python
+      # coding=utf-8
+      from son import Son
+      
+      son = Son("whh",29,1,90)
+      son.show()
+      ```
+      
+
+
+
+## 常用api
+
+### 日期时间
+
+1. 耗时实现
+
+   ```
+   import time
    
-   father.py 文件
-   ```
-   # coding=utf-8
-
-   # Father 类
-   class Father(object):
-      def __init__(self,name,age,sex):
-         self.name = name
-         self.age = age
-         self.sex = sex
-
-      def show(self):
-         print "name: %s,age:%s, sex:%d" % (self.name,self.age,self.sex)
+   startTime = time.time() # 1606467920.91 当前时间合成的秒数
+   # did some thing
+   print "cost time:%s" %(time.time()-startTime)
    ```
 
-   son.py 文件
+### OS模块常用api
+
+1. 路径拼接
+
    ```
-   # coding=utf-8
-   from father import Father
-
-   # Son 类
-   class User(Father):
-      def __init__(self,name,age,sex,score):
-         Father.__init__(self,name,age,sex)
-         self.score = score
-
-      def show(self):
-         super(self)
-         print "score:",self.score
+   import os
+   
+   path0 = "/src/page"
+   path1 = "test.py"
+   print os.path.join(path0,path1) # /src/page/test.py
    ```
 
-   test.py文件
-   ```
-   #!/usr/bin/python
-   # coding=utf-8
-   from son import Son
+2. 获取文件所在的目录
 
-   son = Son("whh",29,1,90)
-   son.show()
+   ```
+   import os
+   
+   file_path = "../src/page/test.py"
+   print os.path.dirname(file_path) # ../src/page/
    ```
 
+3. 存在文件
+
+   ```
+   os.path.exists
+   ```
+
+### 字典常用api
+
+1. 匹配元素是否在dic
+
+   ```
+   dic = {"key0":"value0","key1":"value1","key2":"value2"}
+   if "key0" in dic:
+   	print "contain"
+   else:
+   	print "not contain"
+   # >>> contain
+   ```
+
+2. 更新dic
+
+   ```
+   dic = {'one': 1, 'two': 2, 'three': 3}
+   dic.update({'one':4.5, 'four': 9.3}) # update只影响dic
+   print(a) # {'one': 4.5, 'two': 2, 'three': 3, 'four': 9.3}
+   ```
+
+   
+
+## 问题记录
+
+### import 第三方模块识别不了
+
+1. 原因
+2. 解决
+
+
+
+## 参考
+[python官网文档](https://docs.python.org/zh-cn/3/)
+[RUNoob.com](https://www.runoob.com/python/python-tutorial.html)
 
    
 

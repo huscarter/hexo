@@ -42,7 +42,7 @@ Vue是一套用于构建用户界面的渐进式框架。与其它大型框架�
 2. 安装weex-clid
 ```
 sudo chmod -R 777 /usr/local/lib/node_modules/
-npm i -g weex-toolkit // 安装不要使用sudo执行，如果安装出错大概率因权限问题，使用sudo
+npm i -g weex-toolkit // 如果安装出错大概率因权限问题，使用sudo
 weex -v // 查看当前weex工具版本
 ```
 
