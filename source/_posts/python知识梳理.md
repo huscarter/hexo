@@ -384,6 +384,61 @@ python没有传统编程语言的{}用来指明代码块，也没有访问修饰
    os.path.exists
    ```
 
+
+
+### SET
+
+set集合不允许有重复的值
+
+1. 添加
+
+   ```
+   setTest = set()
+   setTest.add(obj)
+   ```
+
+2. 删除
+
+   ```
+   setTest = set()
+   setTest.add(obj)
+   setTest.remove(obj)
+   ```
+
+3. 获取
+
+   ```
+   setTest = set()
+   setTest.add(obj)
+   for obj in setTest
+   	print ("obj:",obj)
+   ```
+
+4. 取2个set的差集
+
+   <font color="red">主要需要定义新的变量来接收返回值</font>
+
+   ```
+   x = {"apple", "banana", "cherry"}
+   y = {"google", "microsoft", "apple"}
+   # 返回一个集合，元素包含在集合 x ，但不在集合 y 
+   z = x.difference(y) 
+   print(z) # {'cherry', 'banana'}
+   ```
+
+5. 2个set取合集
+
+   <font color="red">主要需要定义新的变量来接收返回值</font>
+
+   ```
+   x = {"apple", "banana", "cherry"}
+   y = {"google", "microsoft", "apple"}
+   z = x.union(y)
+   print(z) # {"apple","banana","cherry","google","microsoft"}
+   ```
+
+   
+
 ### 字典常用api
 
 1. 匹配元素是否在dic
