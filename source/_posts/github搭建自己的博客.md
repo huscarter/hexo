@@ -16,79 +16,81 @@ github是开发人员的一个无价之宝，不仅提供了各种开源项目�
    注册帐号步骤略！
 
 2. 创建自己的博客仓库
-      2.1 格式有要求，必须是[用户名].github.io的形式 (比如huscarter.github.io)。建好之后的博客地址就是 https://[用户名].github.io （比如 https://huscarter.github.io ）。
-      
+   2.1 格式有要求，必须是[用户名].github.io的形式 (比如huscarter.github.io)。建好之后的博客地址就是 https://[用户名].github.io （比如 https://huscarter.github.io ）。
+   
 3. 创建静态页面(html)展示自己博客的内容
 
-      3.1 创建一个index.html，将作为我们博客的首页。这种方式全部使用自己手写html，需要我们有一定的前端开发能力，而且做出来的页面可能不是很美观。
+   3.1 创建一个index.html，将作为我们博客的首页。这种方式全部使用自己手写html，需要我们有一定的前端开发能力，而且做出来的页面可能不是很美观。
 
-      3.2 下一个部分将介绍如何使用hexo创建自己美观的博客。
+   3.2 下一个部分将介绍如何使用hexo创建自己美观的博客。
 
 ## hexo博客搭建
 [hexo](https://hexo.io/)是一个快速、简洁且高效的博客框架。它使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。很多开发设计者提供了许多hexo的主题，我们可以很方便的将自己喜欢主题应用到我们的博客上，妈妈再也不用担心我写的博客样式很难看了。下面我们来看下如何使用hexo搭建博客。
 
-1、 hexo安装
+1. hexo安装
 
-- 安装[git](https://git-scm.com/)
-  直接去官网下载安装即可，不需要其他配置；如果已经安装则跳过此步骤。
-  如果是mac用户需要先安装xcode，并通过xcode安装命令行工具，操作如下。
+   1.1 安装[git](https://git-scm.com/)
+   直接去官网下载安装即可，不需要其他配置；如果已经安装则跳过此步骤。
+   如果是mac用户需要先安装xcode，并通过xcode安装命令行工具，操作如下。
 
-  ```
-  xcode -> Preferences -> Download -> Command Line Tools -> Install
-  ```
+   ```
+   xcode -> Preferences -> Download -> Command Line Tools -> Install
+   ```
 
-- 安装[node.js](https://nodejs.org/en/)
+   1.2 安装[node.js](https://nodejs.org/)
 
-- 安装hexo
-  上面2步安装完成后，即可使用 npm 安装 hexo，命令如下。
+   1.3 安装hexo
 
-  ```
-  npm install -g hexo-cli
-  ```
+   上面2步安装完成后，即可使用 npm 安装 hexo，命令如下。
 
-2、 hexo 的使用
+   ```
+   npm install -g hexo-cli
+   ```
 
-- 建站，运行如下命令
+2. hexo 的使用
 
-  ```
-  hexo init <folder> // 初始化目录
-  cd <folder>
-  npm install // 创建hexo站点文件
-  ```
+   2.1 建站，运行如下命令
 
-- 运行成功之后会在目录下生成如下文件
+   ```
+   hexo init <folder> // 初始化目录
+   cd <folder>
+   npm install // 创建hexo站点文件
+   ```
 
-  ```
-  ├── _config.yml // 重要：全站的配置文件，比如全站的标题、作者、语言和分页等c 
-  ├── package.json // 应用程序的信息,一般不用管
-  ├── scaffolds // 模版文件夹
-  ├── source // 重要：资源文件夹是存放用户资源的地方
-  |   ├── _about // 可在此目录下建立index.md用来写博客中的关于内容
-  |   └── _posts // 我们存放博客文件的目录
-  └── themes // 重要：存放博客主题的目录
-  ```
+   2.2 运行成功之后会在目录下生成如下文件
 
-- 创建第一篇博客
-  在_post书目录下建立文件the first blog.md，博客内容参照
+   ```
+   ├── _config.yml // 重要：全站的配置文件，比如全站的标题、作者、语言和分页等c 
+   ├── package.json // 应用程序的信息,一般不用管
+   ├── scaffolds // 模版文件夹
+   ├── source // 重要：资源文件夹是存放用户资源的地方
+   |   ├── _about // 可在此目录下建立index.md用来写博客中的关于内容
+   |   └── _posts // 我们存放博客文件的目录
+   └── themes // 重要：存放博客主题的目录
+   ```
 
-  ```
-  title: 第一篇博客 // 本篇博客的标题
-  date: 2013-03-09 10:29:44 // 本篇博客创建的时间
-  categories: 
-              - ANDROID // 类目
-  tags: 
-        - BLOG // 标签
-  description: 博客模版 // 博客简介，用于博客列表的展示
-  
-  我的第一篇博客 // 正文
-  ```
+   2.3 创建第一篇博客
 
-- 访问自己的博客
-  使用命令行工具进入到hexo的目录运行如下命令，成功后在浏览器输入http://localhost:4000/访问。
+   在_post书目录下建立文件the first blog.md，博客内容参照
 
-  ```
-  hexo s // hexo server 开启服务
-  ```
+   ```
+   title: 第一篇博客 // 本篇博客的标题
+   date: 2013-03-09 10:29:44 // 本篇博客创建的时间
+   categories: 
+               - ANDROID // 类目
+   tags: 
+         - BLOG // 标签
+   description: 博客模版 // 博客简介，用于博客列表的展示
+   我的第一篇博客 // 正文
+   ```
+
+   2.4 访问自己的博客
+   使用命令行工具进入到hexo的目录运行如下命令，成功后在浏览器输入http://localhost:4000/访问。
+
+   ```
+   hexo s // hexo server 开启服务
+   ```
+
 3. hexo 基础命令介绍 
 
    下面是常用的一些命令
@@ -113,14 +115,14 @@ github是开发人员的一个无价之宝，不仅提供了各种开源项目�
     
     ```
     // 进入你的hexo项目目录
-      cd hexo
-      // 通过git拉取主题到hexo/themes目录
-      git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant 
-      // 安装渲染模块
-      npm install hexo-renderer-pug --save
-      npm install hexo-renderer-sass --save
-      // 将站点_config.yml中的themes配置成你拉取的主题名称
-      _config.yml-->theme: maupassant
+    cd hexo
+    // 通过git拉取主题到hexo/themes目录
+    git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant 
+    // 安装渲染模块
+    npm install hexo-renderer-pug --save
+    npm install hexo-renderer-sass --save
+    // 将站点_config.yml中的themes配置成你拉取的主题名称
+    _config.yml-->theme: maupassant
     ```
 
 3. 每个主题也有自己_config.yml文件用于控制主题的样式和内容，它们都放在themes目录下。
@@ -128,24 +130,21 @@ github是开发人员的一个无价之宝，不仅提供了各种开源项目�
 ## hexo 关联 github
 hexo博客搭建以及hexo主题运用都是和github无关的，使用hexo创建的博客也是运行在本地。那接下来将介绍如何把本地写的hexo博客和我们创建的github仓库关联起来。
 
-1. 安装hexo扩展插件
+1. 安装hexo的github插件
 
    ```
    npm install hexo-deployer-git --save
    ```
-   
+
 2. 在_config.yml里配置github信息
 
-   <font color="red">注意是项目的_config.xml，不是主题里的_config.xml</font>
-
    ```
-   ## Docs: https://hexo.io/docs/deployment.html
    deploy:
      type: git
      repo: https://github.com/xxx/xxx.github.io.git // 你的github博客仓库地址
      branch: master // 主分支
    ```
-   
+
 3. 运行命令将博客发布到github仓库
 
    ```
@@ -153,11 +152,12 @@ hexo博客搭建以及hexo主题运用都是和github无关的，使用hexo创�
    hexo d // 部署
    hexo d -g // 生成+部署(hexo g+hexo d)
    ```
-   
+
 4. 一些注意事项
 
-  4.1 因为source目录是我们的资源目录，部署发布到github也是将source的内容生成静态文件发布，所以如果你有单独想上传的文件请将它放到source目录下。
-  4.3 建议最好在github上建立另外一个仓库用来上传这个hexo，当作hexo站点的版本控制；这样当更换电脑写博客时，只需要从github拉取文件覆盖即可。
+   4.1 因为source目录是我们的资源目录，部署发布到github也是将source的内容生成静态文件发布，所以如果你有单独想上传的文件请将它放到source目录下。
+
+   4.2 建议最好在github上建立另外一个仓库用来上传这个hexo，当作hexo站点的版本控制；这样当更换电脑写博客时，只需要从github拉取文件覆盖即可。
 
 ## 博客关联自己的域名
 
