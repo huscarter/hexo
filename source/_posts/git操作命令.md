@@ -10,7 +10,6 @@ description: android项目git的常用命令，包括branch和tag操作
 ## branch操作
 
 #### 新建分支
-- 
 ```
 git branch v3.0.0
 ```
