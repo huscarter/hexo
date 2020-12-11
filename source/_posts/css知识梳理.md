@@ -112,7 +112,7 @@ padding是内边距，padding是包含在组建内部的，受background影响�
    <del>
    ```
 
-2. <font color="red">行内元素特性</font>
+2. <font color="red">特性</font>
 
    2.1 不能设置高、宽以及行高（大小由内容决定）。
 
@@ -143,7 +143,7 @@ padding是内边距，padding是包含在组建内部的，受background影响�
    <dl>
    ```
 
-2. <font color="red">块级元素特性</font>
+2. <font color="red">特性</font>
 
    2.1 总是另起一行。
 
@@ -165,13 +165,72 @@ padding是内边距，padding是包含在组建内部的，受background影响�
    <td>
    ```
 
-2. <font color="red">行内块元素特性</font>
+2. <font color="red">特性</font>
 
    2.1 和相邻的元素在同一行，但是之间会有空白间隙。
 
    2.2 默认的宽度是它们内容本身。
 
    2.3 宽度、高度、行高、外边距和内边距都可以设置。
+
+### 内联块级弹性伸缩盒（flex）
+
+类似块级元素，但是对子元素有更加灵活的限制。
+
+1. 组建介绍
+
+   ```
+   // 无特定的组建，需要通过display来手动指定
+   display: flex;
+   ```
+
+2. <font color="red">特性</font>
+
+   2.1 宽度默认是100%，这个和inline-flex不同（子元素总和）
+
+   2.2 支持手动设置高宽，但是不支持设置line-height。
+
+   2.3 两个flex元素会占两行。
+
+3. <font color="red">基本属性用法</font>
+
+   ```
+   // 让所有弹性盒模型对象的子元素按比例展示，且忽略它们内部的内容大小
+   flex:1;
+   // 沿水平主轴让元素从左向右排列
+   flex-direction:row;
+   // 让元素沿垂直主轴从上到下垂直排列
+   flex-direction:column;
+   // (默认)元素不换行,比如：一个div宽度100%，设置此属性，2个div宽度就自动变成各50%
+   flex-wrap: nowrap; 
+   // 元素换行,比如：一个div宽度100%，设置此属性，第二个div就在第二行了
+   flex-wrap: wrap; 
+   // 元素在主轴（页面）上左右两端或者上下两端开始排列
+   justify-content:space-between; // justify-content的其他选项见css常用属性部分
+   ```
+
+### 内联块级弹性伸缩(inline-flex)
+
+与flex的不同是，inline-flex类似于行内元素，但与行内元素不同的是，他可以设置宽度，并且子元素宽度之和大于父元素时，与flex结果相同。
+
+1. 组建介绍
+
+   ```
+   // 无特定的组建，需要通过display来手动指定
+   display: inline-flex;
+   ```
+
+2. <font color="red">特性</font>
+
+   2.1 默认的宽度受子元素决定。
+
+   2.2 两个inline-flex元素不会换行。
+
+   2.3 可以设置宽高，不支持设置line-height。
+
+3. <font color="red">基本属性用法</font>
+
+   同flex。
 
 ## css的单位
 
@@ -329,6 +388,8 @@ div p // 选择所有div下的p元素
 
 ### float
 
+设置浮动属性。
+
 ```
 float: right; // 元素向右浮动，浮动的元素会将行内和块级元素向左移动
 float: left; // 元素向左浮动
@@ -348,39 +409,9 @@ display: none; // 组建不展示
 display: flex; // 弹性布局,设为flex布局以后，子元素的float、clear和vertical-align属性将失效
 ```
 
-### flex
+### justify-content
 
-1. flex
-
-   让所有弹性盒模型对象的子元素按比例展示，且忽略它们内部的内容大小。
-
-   ```
-   flex:1; // 所有元素都有相同的长度
-   ```
-
-2. <font color="red">flex-direction</font>
-
-   用来控制容器内内容排列方向，此属性需要搭配<font color="red">display:flex</font>才能起效果。
-
-   ```
-   flex-direction:row; // 沿水平主轴让元素从左向右排列
-   flex-direction:column; // 让元素沿垂直主轴从上到下垂直排列
-   ```
-
-3. <font color="red">flex-wrap</font>
-
-   用来控制容器内内容是否换行，此属性需要搭配<font color="red">display:flex</font>才能起效果。
-
-   ```
-   //  (默认)元素不换行,比如：一个div宽度100%，设置此属性，2个div宽度就自动变成各50%；
-   flex-wrap: nowrap; 
-   // 元素换行,比如：一个div宽度100%，设置此属性，第二个div就在第二行了；
-   flex-wrap: wrap; 
-   ```
-
-### <font color="red">justify-content</font>
-
-元素在主轴（页面）上的排列
+<font color="red">元素在主轴（页面）上的排列。</font>
 
 ```
 justify-content: center; // 元素在主轴（页面）上居中排列
