@@ -453,6 +453,124 @@ justify-content: space-around; // 每个元素两侧的间隔相等。所以元�
    vertical-align: baseline; // 把元素的底端与父元素字体的底端对齐
    ```
 
+## 常见需求实现方式
+
+### 水平居中
+
+1. text-align实现方式
+
+   ```
+   text-align:center;
+   ```
+
+   效果图：
+
+   ![](text-align.jpg)
+
+### 垂直居中
+
+1. vertical-align实现方式
+
+   <font color="red">注意：</font>
+
+   1.1 vertical-align的对齐方式是根据行内基线进行对准，如果行内只有一个元素，那么行内基线就是该元素的基线。如果有2个元素，那么基线会参考第一个元素。只有当行内2个元素都是用vertical-align:middle时，这个2个元素才能相对水平居中；只有当其中一个兄弟元素的高度和父亲高度一样时，这2个元素才能做到父亲容器内的水平居中。
+
+   1.2 vertical-align必须是用在display属性为inline-block的父亲元素内。
+
+   ```
+   <div style="display:inline-block;vertical-align:middle;">
+   	<span style="display:inline-block;height:60%;width:100px;border:solid 1px #ccc;vertical-align:middle;">reference</span>
+   	<span style="height:30px;vertical-align:middle;border:solid 1px #ccc;">content</span>
+   </div>
+   ```
+
+   效果图：
+
+   ![](vertical-align-1.jpg)
+
+2. table-cell实现方式
+
+   ```
+   <div style="display:flex;">
+   	<span style="align-self:center;">content</span>
+   </div>
+   ```
+
+   效果图：
+
+   ![](vertical-align-2.jpg)
+
+3. self-algin实现方式
+
+   ```
+   <div style="display:table;">
+   	<span style="display:table-cell;vertical-align:middle">content</span>
+   </div>
+   ```
+
+   效果图：
+
+   ![](vertical-align-3.jpg)
+
+### 水平填充
+
+1. flex实现方式
+
+   ```
+   <div style="display:flex;flex-direction:row;justify-content:space-between;">
+   	<div style="display:inline-block;height:50%;width:40%;"></div>
+   	<div style="display:inline-block;height:50%;width:40%;"></div>
+   </div>
+   ```
+
+   效果图：
+
+   ![](flex-row.jpg)
+
+### 垂直填充
+
+1. flex实现方式
+
+   ```
+   <div style="display:flex;flex-direction:column;justify-content:space-between;">
+   	<div style="display:inline-block;height:50%;width:40%;"></div>
+   	<div style="display:inline-block;height:50%;width:40%;"></div>
+   </div>
+   ```
+
+   效果图：
+
+   ![](flex-column.jpg)
+
+### 底部固定
+
+1. js+css实现方式
+
+   思路就是页面分为上面和底部两部分，上面的组件高度在页面加载时通过计算（屏幕高度-底部高度）获得。
+
+2. css实现方式
+
+   ```
+   <div style="height:100%;overflow-y:scroll;">
+     <h2>上面部分</h2>
+     <div style="height:500px;background-color:#ccc;"></div>
+     <div style="height:70px;border:none;"></div>
+   </div>
+   
+   <div style="position:fixed;bottom:0;height:70px;background-color:#595959;">
+   	<h2>底部</h2>
+   </div>
+   ```
+
+### 悬浮
+
+```
+position:fixed; // 用于固定位置
+z-index:9999; // 用于设置z轴的优先级
+top: 50px; // 位置
+left:100px; // 位置
+```
+
 
 
 ## 参考
@@ -460,6 +578,8 @@ justify-content: space-around; // 每个元素两侧的间隔相等。所以元�
 ### [runoob](https://www.runoob.com/cssref/css-reference.html)
 
 ### [谈谈text-top、text-bottom](https://www.cnblogs.com/linfengtingyu1/p/3532709.html)
+
+### [vertical-align属性的解读](https://blog.csdn.net/qq_41247659/article/details/102871339)
 
 
 
