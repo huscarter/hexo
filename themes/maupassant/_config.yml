@@ -99,10 +99,10 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
 links:
   - title: github
     url: https://www.github.com/huscarter
-  - title: blog
-    url: https://huscarter.github.io/
-  - title: favorites-konghy
-    Url: https://blog.konghy.cn/
+  - title: favorites:konghy
+    url: https://blog.konghy.cn/
+  - title: favorites:ruanyf
+    url: http://www.ruanyifeng.com/blog/
 
 timeline:
   - num: 1
@@ -119,4 +119,4 @@ js: js
 css: css
 
 # Theme version
-version: 0.0.0
+version: 0.0.1

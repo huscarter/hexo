@@ -7,7 +7,7 @@ tags: typescript
 description: typescript 是微软开发的 javascript 的超集，typescript 兼容 javascript，可以载入javascript 代码然后运行。可将javascript代码以面向对象方式编程的技术，可方便大型web项目开发。
 ---
 
-因公司项目中有使用 typescript，所以需要学习了typescript语法。将其语法记录，用来总结学习成果和方便后期回顾。总的来说typescript语法类似java和kotlin的结合体。
+因公司项目中有使用 typescript，虽然项目里将其转为了js，但是怎么能停下学习的脚步呢？搞起来！此博文用来总结学习成果和方便后期回顾。总的来说typescript语法类似java和kotlin的结合体，如果你还不熟悉js当然是先去学好js再考虑接触typescript，毕竟它只是js的一个超集。
 
 ### typescript安装
 

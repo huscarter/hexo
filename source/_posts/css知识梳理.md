@@ -3,7 +3,7 @@ title: css知识梳理
 date: 2020-10-28 20:29:44
 categories: web
 tags: css
-description: 梳理的日常的css样式知识。
+description: css样式干货知识梳理，走过路过不要错过！
 ---
 
 css里面很多属性，你如果不了解就去使用会让你丈二和尚不到到头脑。这blog整理了平时开发用的css样式以及记录了一些使用时易出错的css样式，你值得拥有。
