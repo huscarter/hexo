@@ -4,7 +4,7 @@ date: 2019-10-31 09:29:44
 categories: flutter
 tags:
      - flutter
-description: Flutter技术介绍。
+description: 简要介绍了Flutter相比目前跨平台开发框架的优缺点，和造成的原因。
 ---
 
 ## Flutter调研

@@ -571,6 +571,21 @@ top: 50px; // 位置
 left:100px; // 位置
 ```
 
+### 小程序.文本自动换行错乱问题
+
+```
+// 在文本组件的样式里添加此属性
+word-break:break-all;
+```
+
+### 小程序.按钮没有垂直居中
+
+```
+display: flex;
+align-items: center;
+justify-content: center; // 设置垂直居中
+```
+
 
 
 ## 参考
