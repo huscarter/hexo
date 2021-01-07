@@ -1,7 +1,7 @@
 ---
 title: java socket demo
 date: 2015-05-18 01:15:41
-categories: java
+categories: j2ee
 tags:
       - java
 description: Java socket demo,server & client.

@@ -1,7 +1,7 @@
 ---
 title: java线程知识梳理
 date: 2020-08-15 15:18:44
-categories: java
+categories: j2ee
 tags:
      - java
 description: 多线程是一个重要的部分，现针对实际开发可能遇到的场景做一个知识梳理。

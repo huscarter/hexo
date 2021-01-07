@@ -1,7 +1,7 @@
 ---
 title: python知识梳理
 date: 2020-10-19 15:29:44
-categories: 脚本语言
+categories: script
 tags: python
 description: python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。2020年1月1日，官方宣布python2停止更新，python2.7成为了pythond2的最后一个版本。
 ---

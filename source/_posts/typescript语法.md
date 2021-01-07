@@ -1,7 +1,7 @@
 ---
 title: typescript语法
 date: 2020-10-19 10:29:44
-categories: 脚本语言
+categories: script
 tags: typescript
 
 description: typescript 是微软开发的 javascript 的超集，typescript 兼容 javascript，可以载入javascript 代码然后运行。可将javascript代码以面向对象方式编程的技术，可方便大型web项目开发。
